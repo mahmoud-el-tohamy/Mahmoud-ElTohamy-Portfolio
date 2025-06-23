@@ -1,84 +1,115 @@
-# Next.js, React & TailwindCSS Portfolio Project
+# Next.js & TailwindCSS Portfolio
 
-A simple portfolio starter theme built with Next.js, React and Tailwind CSS. This is the Next.js version of [vuejs-tailwindcss-portfolio](https://github.com/realstoman/vuejs-tailwindcss-portfolio).
+A modern, responsive portfolio web application built with Next.js, React, and TailwindCSS. This project showcases personal projects, skills, experience, and leadership, and includes a contact form and downloadable CV.
 
-![React-TailwindCSS-Portfolio](https://user-images.githubusercontent.com/16396664/146666086-28e88beb-c2f0-431f-adfb-2396d8f64c80.png)
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Demo](#demo)
+- [Getting Started](#getting-started)
+- [Folder Structure](#folder-structure)
+- [Skills](#skills)
+- [About Me](#about-me)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-## Demo URL
-
-[https://nextjs-tailwindcss-portfolio.vercel.app](https://nextjs-tailwindcss-portfolio.vercel.app)
-
-## Other versions of this project
-
--   React Version: [https://github.com/realstoman/react-tailwindcss-portfolio](https://github.com/realstoman/react-tailwindcss-portfolio)
--   Vue.js Version: [https://github.com/realstoman/vuejs-tailwindcss-portfolio](https://github.com/realstoman/vuejs-tailwindcss-portfolio)
--   Nuxt.js Version: [https://github.com/realstoman/nuxtjs-tailwindcss-portfolio](https://github.com/realstoman/nuxtjs-tailwindcss-portfolio)
+## Overview
+This portfolio is designed for developers and professionals to showcase their work, experience, and skills. Built with Next.js and styled using TailwindCSS, it offers a clean, modern, and fully responsive user interface.
 
 ## Features
+- Project showcase with images, details, and links
+- About Me section with bio, education, skills, experience, and leadership
+- Downloadable CV
+- Contact form with email integration
+- Responsive design (mobile, tablet, desktop)
+- Dark mode support
+- Animated transitions (Framer Motion)
+- Custom theme switcher
 
--   Built with [Next.js](https://nextjs.org) and [React](https://reactjs.org)
--   [Tailwind CSS v3](https://tailwindcss.com)
--   Custom Hooks
--   Framer Motion Transitions & Animations
--   Reusable Components
--   Projects filter by category
--   Projects filter by search
--   Dark Mode
--   Smooth scroll
--   Counter
--   Dynamic forms
--   Back to top button
--   Download file button
--   Simple and responsive design
+## Demo
+![Portfolio Screenshot](public/images/developer.svg)
 
-### To Contribute to this project, read the [Contribution Guidlines](https://github.com/realstoman/nextjs-tailwindcss-portfolio/blob/main/CONTRIBUTING.md)
+## Getting Started
 
-## Setup
+### Prerequisites
+- Node.js (v16 or higher recommended)
+- npm (v8 or higher)
 
-1. Make sure you have Node JS installed. If you don't have it:
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone <your-repo-url>
+   cd Portfolio2/portfolio
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open [http://localhost:3000](http://localhost:3000) to view the app.
 
--   [Download it from nodejs.org](https://nodejs.org)
--   [Install it using NVM ](https://github.com/nvm-sh/nvm)
--   If you're on Mac, Homebrew is a good option too:
-
-```
-brew install node
-```
-
-2. Clone the repo:
-
-```
-git clone https://github.com/realstoman/nextjs-tailwindcss-portfolio.git
-```
-
-3. Open the project folder:
-
-```
-cd nextjs-tailwindcss-portfolio
+### Build for Production
+```bash
+npm run build
+npm start
 ```
 
-4. Install packages and dependencies:
-
+## Folder Structure
 ```
-npm install
+portfolio/
+  components/      # React components (about, contact, projects, shared, etc.)
+  data/            # Data files (projects, about me, clients)
+  hooks/           # Custom React hooks
+  pages/           # Next.js pages (routing)
+  public/          # Static assets (images, fonts, CV)
+  styles/          # Global and Tailwind CSS styles
+  tailwind.config.js  # TailwindCSS configuration
+  postcss.config.js   # PostCSS configuration
+  next.config.js      # Next.js configuration
 ```
 
-5. Start a local dev server at `http://localhost:3000`:
+## Skills
+- Front-End: HTML, CSS, JavaScript, Bootstrap, React.js, TypeScript, Next.js, Responsive Design
+- Programming: C++, Python
+- Computer Science: Data Structures & Algorithms, OOP
+- Version Control: Git, GitHub
+- Soft Skills: Communication, Teamwork, Problem-Solving, Event Management, Organization
 
-```
-npm run dev
-```
+## About Me
+I'm Mahmoud El-Tohamy, a front-end developer who turns ideas into sleek, responsive web experiences using React, Next.js, and TypeScript.
 
-## Notes
+By day, I mentor young talents at DECI, helping them build real-world coding skills. By passion, I lead impactful initiatives with Youth Leading Youth (YLY), blending tech, leadership, and community growth.
 
--   Always run `npm install` after pulling new changes
--   I'll be constantly updating this repo as I'll be adding more sections to it, so please always check the projects section of this repo to see what tasks are under todo and in progress
--   Coming Soon [I'll be doing a screencast](https://www.youtube.com/realstoman). Soon I'll be uploading a video to my YouTube channel where I'll be going through the process of creating this portoflio
--   Illustrations from [unDraw](https://undraw.co) and [Freepik](https://freepik.com)
--   Images from [Unsplash](https://unsplash.com)
--   Feel free to use it as your own portfolio
--   Contributions are welcome
+Whether it's clean UI, efficient code, or inspiring the next generation, I build with purpose and always keep learning.
 
-### License
+**Education:**
+- Bachelors in Computer Science, Mansoura University (Expected 2025)
 
-[MIT](https://github.com/realstoman/nextjs-tailwindcss-portfolio/blob/main/LICENSE)
+**Languages:**
+- Arabic (Native)
+- English (Upper-Intermediate)
+
+**Experience:**
+- Programming Instructor – Digital Egypt Cubs Initiative (DECI)
+- Led and mentored 60+ students, delivered training on Python, algorithms, and coding basics
+- Developed learning materials and practical challenges
+
+**Leadership & Volunteering:**
+- Vice Team Leader – Youth Leading Youth (YLY)
+- Head/Vice Head of Operations Committee
+- Event Manager & Organizer for various youth and governmental events
+
+## Contributing
+Contributions are welcome! Please fork the repository and submit a pull request for review.
+
+## License
+This project is open source and available under the [MIT License](LICENSE).
+
+## Contact
+- Email: mahmoud.eltohamyy@gmail.com
+- LinkedIn: [linkedin.com/in/mahmoud-el-tohamy](https://linkedin.com/in/mahmoud-el-tohamy)
+- Download CV: [public/files/Mahmoud%20ElTohamy%20CV.pdf](public/files/Mahmoud%20ElTohamy%20CV.pdf) 

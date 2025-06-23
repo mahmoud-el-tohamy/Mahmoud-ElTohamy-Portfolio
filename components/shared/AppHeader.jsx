@@ -1,11 +1,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FiSun, FiMoon, FiX, FiMenu } from 'react-icons/fi';
 import HireMeModal from '../HireMeModal';
-import logoLight from '../../public/images/logo-light.svg';
-import logoDark from '../../public/images/logo-dark.svg';
 import useThemeSwitcher from '../../hooks/useThemeSwitcher';
 
 function AppHeader() {
@@ -48,23 +45,9 @@ function AppHeader() {
 				<div className="flex justify-between items-center px-4 sm:px-0">
 					<div>
 						<Link href="/">
-							{activeTheme === 'dark' ? (
-								<Image
-									src={logoDark}
-									className="w-36 cursor-pointer"
-									alt="Dark Logo"
-									width={150}
-									height={120}
-								/>
-							) : (
-								<Image
-									src={logoLight}
-									className="w-36 cursor-pointer"
-									alt="Dark Logo"
-									width={150}
-									height={120}
-								/>
-							)}
+							<span className="font-general-bold text-2xl sm:text-3xl text-primary-dark dark:text-primary-light tracking-tight cursor-pointer">
+								Mahmoud El-Tohamy
+							</span>
 						</Link>
 					</div>
 

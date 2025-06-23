@@ -1,20 +1,20 @@
-import { FiPhone, FiMapPin, FiMail } from 'react-icons/fi';
+import { FiPhone, FiMapPin, FiMail, FiLinkedin } from 'react-icons/fi';
 
 const contacts = [
 	{
 		id: 1,
-		name: 'Your Address, Your City, Your Country',
-		icon: <FiMapPin />,
-	},
-	{
-		id: 2,
-		name: 'email@domain.com',
+		name: 'mahmoud.eltohamyy@gmail.com',
 		icon: <FiMail />,
 	},
 	{
-		id: 3,
-		name: '555 8888 888',
+		id: 2,
+		name: '+20 155 337 9091',
 		icon: <FiPhone />,
+	},
+	{
+		id: 3,
+		name: 'linkedin.com/in/mahmoud-el-tohamy',
+		icon: <FiLinkedin />,
 	},
 ];
 

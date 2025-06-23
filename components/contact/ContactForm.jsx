@@ -1,14 +1,41 @@
+import React, { useRef, useState } from 'react';
 import Button from '../reusable/Button';
 import FormInput from '../reusable/FormInput';
+import emailjs from 'emailjs-com';
 
 function ContactForm() {
+	const form = useRef();
+	const [sent, setSent] = useState(false);
+	const [error, setError] = useState(null);
+
+	const sendEmail = (e) => {
+		e.preventDefault();
+		setError(null);
+		emailjs
+			.sendForm(
+				'service_gyj836y', // EmailJS service ID
+				'template_gkwudon', // EmailJS template ID
+				form.current,
+				'E1nkngYfW0WYPw1_5' // TODO: Replace with your EmailJS public key
+			)
+			.then(
+				(result) => {
+					setSent(true);
+				},
+				(error) => {
+					setError('Failed to send. Please try again.');
+				}
+			);
+	};
+
+	if (sent) return <p className="text-emerald-600">Message sent! Thank you.</p>;
+
 	return (
 		<div className="w-full lg:w-1/2">
 			<div className="leading-loose">
 				<form
-					onSubmit={(e) => {
-						e.preventDefault();
-					}}
+					ref={form}
+					onSubmit={sendEmail}
 					className="max-w-xl m-4 p-6 sm:p-10 bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-xl text-left"
 				>
 					<p className="font-general-medium text-primary-dark dark:text-primary-light text-2xl mb-8">
@@ -69,6 +96,7 @@ function ContactForm() {
 							/>
 						</span>
 					</div>
+					{error && <p className="text-red-500 mt-4">{error}</p>}
 				</form>
 			</div>
 		</div>

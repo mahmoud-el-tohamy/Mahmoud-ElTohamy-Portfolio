@@ -4,20 +4,13 @@ function AppFooterCopyright() {
 			<div className="text-lg text-ternary-dark dark:text-ternary-light">
 				&copy; {new Date().getFullYear()}
 				<a
-					href="https://github.com/realstoman/nextjs-tailwindcss-portfolio"
+					href="https://github.com/mahmoud-el-tohamy/portfolio"
 					target="__blank"
-					className="hover:underline hover:text-indigo-600 dark:hover:text-indigo-300 ml-1 duration-500"
+					className="hover:underline hover:text-emerald-600 dark:hover:text-emerald-400 ml-1 duration-500"
 				>
-					Next.js & Tailwind CSS Portfolio
+					Portfolio by Mahmoud El-Tohamy
 				</a>
 				.{' '}
-				<a
-					href="https://stoman.me"
-					target="__blank"
-					className="text-secondary-dark dark:text-secondary-light font-medium uppercase hover:underline hover:text-indigo-600 dark:hover:text-indigo-300 ml-1 duration-500"
-				>
-					Stoman
-				</a>
 			</div>
 		</div>
 	);

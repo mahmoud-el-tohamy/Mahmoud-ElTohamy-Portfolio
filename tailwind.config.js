@@ -9,17 +9,21 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				// Light colors
+				// Accent color
+				emerald: {
+					DEFAULT: '#10B981',
+					'400': '#22C55E',
+				},
+				// Original light colors
 				'primary-light': '#F7F8FC',
 				'secondary-light': '#FFFFFF',
 				'ternary-light': '#f6f7f8',
 
-				// Dark colors
-				'primary-dark': '#0D2438',
-				'secondary-dark': '#102D44',
-				'ternary-dark': '#1E3851',
+				// Original dark colors
+				'primary-dark': '#0a1622',
+				'secondary-dark': '#10151c',
+				'ternary-dark': '#181e25',
 
-				// Extended v3 color
 				gray: colors.neutral,
 			},
 			container: {
