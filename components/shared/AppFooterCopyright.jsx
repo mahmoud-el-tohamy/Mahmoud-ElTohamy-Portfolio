@@ -4,7 +4,7 @@ function AppFooterCopyright() {
 			<div className="text-lg text-ternary-dark dark:text-ternary-light">
 				&copy; {new Date().getFullYear()}
 				<a
-					href="https://github.com/mahmoud-el-tohamy/portfolio"
+					href="https://github.com/mahmoud-el-tohamy/Mahmoud-ElTohamy-Portfolio"
 					target="__blank"
 					className="hover:underline hover:text-emerald-600 dark:hover:text-emerald-400 ml-1 duration-500"
 				>
