@@ -19,7 +19,7 @@ function AboutCounter() {
 				<CounterItem
 					title="Students in DECI"
 					counter={<span id="students" />}
-					measurement="k+"
+					measurement="+"
 				/>
 
 				<CounterItem
