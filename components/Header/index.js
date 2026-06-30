@@ -6,7 +6,15 @@ import Button from "../Button";
 // Local Data
 import data from "../../data/portfolio.json";
 
-const Header = ({ handleWorkScroll, handleSkillsScroll, handleExperienceScroll, handleServicesScroll, handleAboutScroll, handleContactScroll, isBlog }) => {
+const Header = ({
+  handleWorkScroll,
+  handleSkillsScroll,
+  handleExperienceScroll,
+  handleServicesScroll,
+  handleAboutScroll,
+  handleContactScroll,
+  isBlog,
+}) => {
   const router = useRouter();
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -23,12 +31,12 @@ const Header = ({ handleWorkScroll, handleSkillsScroll, handleExperienceScroll, 
         {({ open }) => (
           <>
             <div className="flex items-center justify-between p-2 laptop:p-0">
-              <h1
+              <img
                 onClick={() => router.push("/")}
-                className="font-medium p-2 laptop:p-0 link"
-              >
-                {name}.
-              </h1>
+                src="/images/logo.png"
+                alt={name}
+                className="h-10 laptop:h-14 cursor-pointer p-2 laptop:p-0 link"
+              />
 
               <div className="flex items-center">
                 {data.darkMode && (
@@ -55,8 +63,8 @@ const Header = ({ handleWorkScroll, handleSkillsScroll, handleExperienceScroll, 
                           ? "menu-white.svg"
                           : "menu.svg"
                         : theme === "light"
-                        ? "cancel.svg"
-                        : "cancel-white.svg"
+                          ? "cancel.svg"
+                          : "cancel-white.svg"
                     }`}
                   ></img>
                 </Popover.Button>
@@ -78,13 +86,17 @@ const Header = ({ handleWorkScroll, handleSkillsScroll, handleExperienceScroll, 
                     <Button onClick={() => router.push("/blog")}>Blog</Button>
                   )}
                   <Button
-                    onClick={handleContactScroll || (() => window.scrollTo(0,0))}
+                    onClick={
+                      handleContactScroll || (() => window.scrollTo(0, 0))
+                    }
                   >
                     Contact
                   </Button>
                   <Button
                     type="primary"
-                    onClick={() => window.open("/Mahmoud_ElTohamy_CV.pdf", "_blank")}
+                    onClick={() =>
+                      window.open("/Mahmoud_ElTohamy_CV.pdf", "_blank")
+                    }
                   >
                     Download CV
                   </Button>
@@ -98,13 +110,17 @@ const Header = ({ handleWorkScroll, handleSkillsScroll, handleExperienceScroll, 
                     <Button onClick={() => router.push("/blog")}>Blog</Button>
                   )}
                   <Button
-                    onClick={handleContactScroll || (() => window.scrollTo(0,0))}
+                    onClick={
+                      handleContactScroll || (() => window.scrollTo(0, 0))
+                    }
                   >
                     Contact
                   </Button>
                   <Button
                     type="primary"
-                    onClick={() => window.open("/Mahmoud_ElTohamy_CV.pdf", "_blank")}
+                    onClick={() =>
+                      window.open("/Mahmoud_ElTohamy_CV.pdf", "_blank")
+                    }
                     classes="first:ml-1"
                   >
                     Download CV
@@ -116,14 +132,14 @@ const Header = ({ handleWorkScroll, handleSkillsScroll, handleExperienceScroll, 
         )}
       </Popover>
       <div
-        className={`hidden flex-row items-center justify-between fixed top-0 left-0 right-0 z-50 px-4 tablet:px-10 py-4 backdrop-blur-md bg-white/70 dark:bg-black/70 border-b border-gray-200 dark:border-gray-800 dark:text-white tablet:flex`}
+        className={`hidden flex-row items-center justify-between fixed top-0 left-0 right-0 z-50 px-4 tablet:px-20 py-2 backdrop-blur-md bg-white/70 dark:bg-black/70 border-b border-gray-200 dark:border-gray-800 dark:text-white tablet:flex `}
       >
-        <h1
+        <img
           onClick={() => router.push("/")}
-          className="font-medium cursor-pointer mob:p-2 laptop:p-0"
-        >
-          {name}.
-        </h1>
+          src="/images/logo.png"
+          alt={name}
+          className="h-10 laptop:h-14 cursor-pointer mob:p-2 laptop:p-0"
+        />
         {!isBlog ? (
           <div className="flex">
             <Button onClick={handleWorkScroll}>Work</Button>
@@ -134,7 +150,9 @@ const Header = ({ handleWorkScroll, handleSkillsScroll, handleExperienceScroll, 
             {showBlog && (
               <Button onClick={() => router.push("/blog")}>Blog</Button>
             )}
-            <Button onClick={handleContactScroll || (() => window.scrollTo(0,0))}>
+            <Button
+              onClick={handleContactScroll || (() => window.scrollTo(0, 0))}
+            >
               Contact
             </Button>
             <Button
@@ -161,7 +179,9 @@ const Header = ({ handleWorkScroll, handleSkillsScroll, handleExperienceScroll, 
             {showBlog && (
               <Button onClick={() => router.push("/blog")}>Blog</Button>
             )}
-            <Button onClick={handleContactScroll || (() => window.scrollTo(0,0))}>
+            <Button
+              onClick={handleContactScroll || (() => window.scrollTo(0, 0))}
+            >
               Contact
             </Button>
             <Button

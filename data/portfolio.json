@@ -1,9 +1,9 @@
 {
   "name": "ElTohamy",
   "headerTaglineOne": "Hello 👋",
-  "headerTaglineTwo": "I'm Mahmoud El-Tohamy - a Full Stack",
-  "headerTaglineThree": "Developer based in",
-  "headerTaglineFour": "Mansoura, Egypt.",
+  "headerTaglineTwo": "I'm Mahmoud El-Tohamy",
+  "headerTaglineThree": "a Full Stack Developer",
+  "headerTaglineFour": "based in Mansoura, Egypt.",
   "showCursor": false,
   "showBlog": false,
   "darkMode": true,
