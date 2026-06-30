@@ -188,9 +188,20 @@ export default function Home() {
 
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
           <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
-          <p className="tablet:m-10 mt-2 text-xl laptop:text-3xl w-full laptop:w-3/5">
-            {data.aboutpara}
-          </p>
+          <div className="tablet:m-10 mt-5 flex flex-col laptop:flex-row items-center justify-between gap-20">
+            <div className="w-full laptop:w-3/5 p-6 tablet:p-10 rounded-3xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 shadow-xl backdrop-blur-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,74,173,0.15)]">
+              <p className="text-lg tablet:text-2xl laptop:text-3xl leading-relaxed text-black/80 dark:text-gray-300">
+                {data.aboutpara}
+              </p>
+            </div>
+            <div className="hidden laptop:flex w-full laptop:w-2/5 justify-center relative items-center h-full">
+              <div className="w-64 h-64 bg-[#004aad] rounded-full blur-3xl opacity-40 animate-pulse absolute"></div>
+              <div className="w-56 h-56 bg-gradient-to-br from-[#004aad]/80 to-blue-600/80 rounded-3xl shadow-2xl animate-float backdrop-blur-md border border-white/20 transform rotate-6 flex items-center justify-center">
+                <img src="/images/programming.svg" alt="Programming" className="w-28 h-28 object-contain brightness-0 invert opacity-90 drop-shadow-md" />
+              </div>
+              <div className="w-32 h-32 bg-gradient-to-tl from-blue-500/80 to-[#004aad]/80 rounded-full shadow-xl animate-float backdrop-blur-md border border-white/20 absolute -bottom-5 -left-5" style={{ animationDelay: '2s' }}></div>
+            </div>
+          </div>
         </div>
         <Footer contactRef={contactRef} />
       </div>
