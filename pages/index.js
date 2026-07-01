@@ -3,8 +3,8 @@ import Header from "../components/Header";
 import ServiceCard from "../components/ServiceCard";
 import Socials from "../components/Socials";
 import WorkCard from "../components/WorkCard";
-import { useIsomorphicLayoutEffect } from "../utils";
-import { stagger } from "../animations";
+
+import { FadeUp, StaggerContainer, StaggerItem } from "../components/Animations";
 import Footer from "../components/Footer";
 import Skills from "../components/Skills";
 import Experience from "../components/Experience";
@@ -24,11 +24,6 @@ export default function Home() {
   const skillsRef = useRef();
   const experienceRef = useRef();
   const servicesRef = useRef();
-  const textOne = useRef();
-  const textTwo = useRef();
-  const textThree = useRef();
-  const textFour = useRef();
-
   // Handling Scroll
   const handleWorkScroll = () => {
     window.scrollTo({
@@ -78,14 +73,6 @@ export default function Home() {
     });
   };
 
-  useIsomorphicLayoutEffect(() => {
-    stagger(
-      [textOne.current, textTwo.current, textThree.current, textFour.current],
-      { y: 40, x: -10, transform: "scale(0.95) skew(10deg)" },
-      { y: 0, x: 0, transform: "scale(1)" }
-    );
-  }, []);
-
   return (
     <div className="relative">
       <Head>
@@ -107,37 +94,35 @@ export default function Home() {
         />
         <div className="laptop:mt-20 mt-10 flex flex-col laptop:flex-row items-center justify-between gap-10">
           <div className="w-full laptop:w-3/5">
-            <div className="mt-5">
-              <h1
-                ref={textOne}
-                className="text-3xl tablet:text-5xl laptop:text-5xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-full"
-              >
-                {data.headerTaglineOne}
-              </h1>
-              <h1
-                ref={textTwo}
-                className="text-3xl tablet:text-5xl laptop:text-5xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-full"
-              >
-                {data.headerTaglineTwo}
-              </h1>
-              <h1
-                ref={textThree}
-                className="text-3xl tablet:text-5xl laptop:text-5xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-full"
-              >
-                {data.headerTaglineThree}
-              </h1>
-              <h1
-                ref={textFour}
-                className="text-3xl tablet:text-5xl laptop:text-5xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-full"
-              >
-                {data.headerTaglineFour}
-              </h1>
-            </div>
+            <StaggerContainer className="mt-5">
+              <StaggerItem>
+                <h1 className="text-3xl tablet:text-5xl laptop:text-5xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-full">
+                  {data.headerTaglineOne}
+                </h1>
+              </StaggerItem>
+              <StaggerItem>
+                <h1 className="text-3xl tablet:text-5xl laptop:text-5xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-full">
+                  {data.headerTaglineTwo}
+                </h1>
+              </StaggerItem>
+              <StaggerItem>
+                <h1 className="text-3xl tablet:text-5xl laptop:text-5xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-full">
+                  {data.headerTaglineThree}
+                </h1>
+              </StaggerItem>
+              <StaggerItem>
+                <h1 className="text-3xl tablet:text-5xl laptop:text-5xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-full">
+                  {data.headerTaglineFour}
+                </h1>
+              </StaggerItem>
+            </StaggerContainer>
 
-            <Socials className="mt-2 laptop:mt-5" />
+            <FadeUp delay={0.8}>
+              <Socials className="mt-2 laptop:mt-5" />
+            </FadeUp>
           </div>
 
-          <div className="w-full laptop:w-2/5 flex justify-center laptop:justify-end mt-10 laptop:mt-0">
+          <FadeUp delay={0.4} className="w-full laptop:w-2/5 flex justify-center laptop:justify-end mt-10 laptop:mt-0">
             <div className="relative w-72 h-72 laptop:w-[500px] laptop:h-[500px]">
               <img 
                 src="/images/PP.png" 
@@ -147,49 +132,61 @@ export default function Home() {
               />
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-gradient-to-br from-[#004aad] to-blue-500 rounded-full blur-3xl opacity-30 -z-10"></div>
             </div>
-          </div>
+          </FadeUp>
         </div>
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
-          <h1 className="text-2xl text-bold">Work.</h1>
+          <FadeUp>
+            <h1 className="text-2xl text-bold">Work.</h1>
+          </FadeUp>
 
-          <div className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
+          <StaggerContainer className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
             {data.projects.map((project) => (
-              <WorkCard
-                key={project.id}
-                img={project.imageSrc}
-                name={project.title}
-                description={project.description}
-                githubUrl={project.githubUrl}
-                previewUrl={project.previewUrl}
-              />
+              <StaggerItem key={project.id}>
+                <WorkCard
+                  img={project.imageSrc}
+                  name={project.title}
+                  description={project.description}
+                  githubUrl={project.githubUrl}
+                  previewUrl={project.previewUrl}
+                />
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
 
         <div ref={skillsRef}>
-          <Skills />
+          <FadeUp>
+            <Skills />
+          </FadeUp>
         </div>
         <div ref={experienceRef}>
-          <Experience />
+          <FadeUp>
+            <Experience />
+          </FadeUp>
         </div>
 
         <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={servicesRef}>
-          <h1 className=" text-2xl text-bold">Services.</h1>
-          <div className="mt-5 grid grid-cols-1 laptop:grid-cols-2 gap-6">
+          <FadeUp>
+            <h1 className="text-2xl text-bold">Services.</h1>
+          </FadeUp>
+          <StaggerContainer className="mt-5 grid grid-cols-1 laptop:grid-cols-2 gap-6">
             {data.services.map((service, index) => (
-              <ServiceCard
-                key={index}
-                name={service.title}
-                description={service.description}
-              />
+              <StaggerItem key={index}>
+                <ServiceCard
+                  name={service.title}
+                  description={service.description}
+                />
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
 
         <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
-          <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
+          <FadeUp>
+            <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
+          </FadeUp>
           <div className="tablet:m-10 mt-5 flex flex-col laptop:flex-row items-center justify-between gap-20">
-            <div className="w-full laptop:w-3/5 p-6 tablet:p-10 rounded-3xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 shadow-xl backdrop-blur-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,74,173,0.15)]">
+            <FadeUp className="w-full laptop:w-3/5 p-6 tablet:p-10 rounded-3xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 shadow-xl backdrop-blur-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,74,173,0.15)]">
               <div className="flex flex-col gap-6 text-black/80 dark:text-gray-300">
                 <p className="text-xl tablet:text-2xl laptop:text-3xl font-medium leading-relaxed">
                   <span className="font-bold text-[#004aad] dark:text-blue-400">Full Stack Developer</span> with hands-on experience building scalable, high-performance web applications.
@@ -213,7 +210,7 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-            </div>
+            </FadeUp>
             <div className="hidden laptop:flex w-full laptop:w-2/5 justify-center relative items-center h-full">
               <div className="w-64 h-64 bg-[#004aad] rounded-full blur-3xl opacity-40 animate-pulse absolute"></div>
               <div className="w-56 h-56 bg-gradient-to-br from-[#004aad]/80 to-blue-600/80 rounded-3xl shadow-2xl animate-float backdrop-blur-md border border-white/20 transform rotate-6 flex items-center justify-center">

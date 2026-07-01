@@ -1,10 +1,13 @@
 import "../styles/globals.css";
 import { ThemeProvider } from "next-themes";
+import SmoothScroll from "../components/SmoothScroll";
 
 const App = ({ Component, pageProps }) => {
   return (
     <ThemeProvider attribute="class">
-      <Component {...pageProps} />
+      <SmoothScroll>
+        <Component {...pageProps} />
+      </SmoothScroll>
     </ThemeProvider>
   );
 };
