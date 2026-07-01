@@ -10,6 +10,8 @@ import Skills from "../components/Skills";
 import Experience from "../components/Experience";
 import Head from "next/head";
 import Button from "../components/Button";
+import BackToTop from "../components/BackToTop";
+import { GraduationCap, Trophy, Users } from "lucide-react";
 
 
 
@@ -76,8 +78,24 @@ export default function Home() {
   return (
     <div className="relative">
       <Head>
-        <title>{data.name}</title>
+        <title>{data.name} | Full Stack Developer</title>
+        <meta name="description" content="Portfolio of Mahmoud El-Tohamy, a Full Stack Developer specializing in MERN Stack and Next.js." />
+        <meta name="keywords" content="Mahmoud El-Tohamy, Full Stack Developer, MERN, Next.js, React, Node.js, Web Development, Portfolio" />
         <link rel="icon" type="image/png" href="/images/PP.png" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://mahmoud-el-tohamy-portfolio.vercel.app/" />
+        <meta property="og:title" content={`${data.name} | Full Stack Developer`} />
+        <meta property="og:description" content="Portfolio of Mahmoud El-Tohamy, a Full Stack Developer specializing in MERN Stack and Next.js." />
+        <meta property="og:image" content="https://mahmoud-el-tohamy-portfolio.vercel.app/images/PP.png" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://mahmoud-el-tohamy-portfolio.vercel.app/" />
+        <meta property="twitter:title" content={`${data.name} | Full Stack Developer`} />
+        <meta property="twitter:description" content="Portfolio of Mahmoud El-Tohamy, a Full Stack Developer specializing in MERN Stack and Next.js." />
+        <meta property="twitter:image" content="https://mahmoud-el-tohamy-portfolio.vercel.app/images/PP.png" />
       </Head>
 
       <div className="gradient-circle"></div>
@@ -134,7 +152,7 @@ export default function Home() {
             </div>
           </FadeUp>
         </div>
-        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
+        <div id="work" className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={workRef}>
           <FadeUp>
             <h1 className="text-2xl text-bold">Work.</h1>
           </FadeUp>
@@ -155,18 +173,18 @@ export default function Home() {
           </StaggerContainer>
         </div>
 
-        <div ref={skillsRef}>
+        <div id="skills" ref={skillsRef}>
           <FadeUp>
             <Skills />
           </FadeUp>
         </div>
-        <div ref={experienceRef}>
+        <div id="experience" ref={experienceRef}>
           <FadeUp>
             <Experience />
           </FadeUp>
         </div>
 
-        <div className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={servicesRef}>
+        <div id="services" className="mt-10 laptop:mt-30 p-2 laptop:p-0" ref={servicesRef}>
           <FadeUp>
             <h1 className="text-2xl text-bold">Services.</h1>
           </FadeUp>
@@ -183,7 +201,7 @@ export default function Home() {
           </StaggerContainer>
         </div>
 
-        <div className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
+        <div id="about" className="mt-10 laptop:mt-40 p-2 laptop:p-0" ref={aboutRef}>
           <FadeUp>
             <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
           </FadeUp>
@@ -202,12 +220,13 @@ export default function Home() {
                 
                 <div className="mt-4 flex flex-wrap gap-3">
                   {[
-                    { label: "🎓 CS Graduate '25", color: "bg-blue-500/10 text-blue-600 dark:text-blue-300 border-blue-500/20" },
-                    { label: "🏆 Hackathon Winner", color: "bg-yellow-500/10 text-yellow-600 dark:text-yellow-300 border-yellow-500/20" },
-                    { label: "👨‍🏫 Mentored 100+ Students", color: "bg-green-500/10 text-green-600 dark:text-green-300 border-green-500/20" },
+                    { text: "CS Graduate '25", icon: <GraduationCap className="w-4 h-4" />, color: "bg-blue-500/10 text-blue-600 dark:text-blue-300 border-blue-500/20" },
+                    { text: "Hackathon Winner", icon: <Trophy className="w-4 h-4" />, color: "bg-yellow-500/10 text-yellow-600 dark:text-yellow-300 border-yellow-500/20" },
+                    { text: "Mentored 100+ Students", icon: <Users className="w-4 h-4" />, color: "bg-green-500/10 text-green-600 dark:text-green-300 border-green-500/20" },
                   ].map((badge, index) => (
-                    <span key={index} className={`px-4 py-2 text-sm tablet:text-base font-medium rounded-full border shadow-sm hover:scale-105 transition-transform duration-300 cursor-default ${badge.color}`}>
-                      {badge.label}
+                    <span key={index} className={`px-4 py-2 flex items-center gap-2 text-sm tablet:text-base font-medium rounded-full border shadow-sm hover:scale-105 transition-transform duration-300 cursor-default ${badge.color}`}>
+                      {badge.icon}
+                      {badge.text}
                     </span>
                   ))}
                 </div>
@@ -224,6 +243,7 @@ export default function Home() {
         </div>
         <Footer contactRef={contactRef} />
       </div>
+      <BackToTop />
     </div>
   );
 }

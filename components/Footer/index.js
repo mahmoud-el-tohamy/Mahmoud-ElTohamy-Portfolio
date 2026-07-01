@@ -6,7 +6,7 @@ import ContactForm from "../ContactForm";
 const Footer = ({ contactRef }) => {
   return (
     <>
-      <div className="mt-5 laptop:mt-40 p-2 laptop:p-0" ref={contactRef}>
+      <div id="contact" className="mt-5 laptop:mt-40 p-2 laptop:p-0" ref={contactRef}>
         <div>
           <div className="mt-10 flex flex-col-reverse laptop:flex-row items-center justify-between gap-10 laptop:gap-20">
             {/* Decorative Graphics (Left) */}

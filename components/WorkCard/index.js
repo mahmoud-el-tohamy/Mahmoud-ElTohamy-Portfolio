@@ -26,7 +26,7 @@ const WorkCard = ({ img, name, description, techStack, githubUrl, previewUrl }) 
         ref={cardRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="relative rounded-lg overflow-hidden transition-all ease-out duration-300 aspect-video shadow-md hover:shadow-2xl hover:z-10"
+        className="relative rounded-lg overflow-hidden transition-all ease-out duration-300 aspect-video shadow-md hover:shadow-2xl hover:z-10 group"
         style={{ 
           transform: transformStyle,
           transition: transformStyle.includes("rotateX(0deg)") ? "transform 0.5s ease" : "none" 
@@ -34,7 +34,7 @@ const WorkCard = ({ img, name, description, techStack, githubUrl, previewUrl }) 
       >
         <img
           alt={name}
-          className="h-full w-full object-cover transition-all ease-out duration-300"
+          className="h-full w-full object-cover transition-all ease-out duration-500 group-hover:scale-110"
           src={img}
         ></img>
       </div>
