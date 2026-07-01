@@ -190,9 +190,29 @@ export default function Home() {
           <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
           <div className="tablet:m-10 mt-5 flex flex-col laptop:flex-row items-center justify-between gap-20">
             <div className="w-full laptop:w-3/5 p-6 tablet:p-10 rounded-3xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 shadow-xl backdrop-blur-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,74,173,0.15)]">
-              <p className="text-lg tablet:text-2xl laptop:text-3xl leading-relaxed text-black/80 dark:text-gray-300">
-                {data.aboutpara}
-              </p>
+              <div className="flex flex-col gap-6 text-black/80 dark:text-gray-300">
+                <p className="text-xl tablet:text-2xl laptop:text-3xl font-medium leading-relaxed">
+                  <span className="font-bold text-[#004aad] dark:text-blue-400">Full Stack Developer</span> with hands-on experience building scalable, high-performance web applications.
+                </p>
+                <p className="text-lg tablet:text-xl laptop:text-2xl leading-relaxed opacity-90">
+                  Currently completing the <span className="font-bold text-[#004aad] dark:text-blue-400">ITI 9-Month Open Source Program</span> following an NTI MEAN Stack government scholarship.
+                </p>
+                <p className="text-lg tablet:text-xl laptop:text-2xl leading-relaxed opacity-90">
+                  Combines solid engineering fundamentals with real-world teaching experience, having trained <span className="font-bold text-[#004aad] dark:text-blue-400">100+ students</span> in Programming and Front-End Development through government-backed initiatives.
+                </p>
+                
+                <div className="mt-4 flex flex-wrap gap-3">
+                  {[
+                    { label: "🎓 CS Graduate '25", color: "bg-blue-500/10 text-blue-600 dark:text-blue-300 border-blue-500/20" },
+                    { label: "🏆 Hackathon Winner", color: "bg-yellow-500/10 text-yellow-600 dark:text-yellow-300 border-yellow-500/20" },
+                    { label: "👨‍🏫 Mentored 100+ Students", color: "bg-green-500/10 text-green-600 dark:text-green-300 border-green-500/20" },
+                  ].map((badge, index) => (
+                    <span key={index} className={`px-4 py-2 text-sm tablet:text-base font-medium rounded-full border shadow-sm hover:scale-105 transition-transform duration-300 cursor-default ${badge.color}`}>
+                      {badge.label}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
             <div className="hidden laptop:flex w-full laptop:w-2/5 justify-center relative items-center h-full">
               <div className="w-64 h-64 bg-[#004aad] rounded-full blur-3xl opacity-40 animate-pulse absolute"></div>
