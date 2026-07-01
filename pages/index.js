@@ -88,14 +88,14 @@ export default function Home() {
         <meta property="og:url" content="https://mahmoud-el-tohamy-portfolio.vercel.app/" />
         <meta property="og:title" content={`${data.name} | Full Stack Developer`} />
         <meta property="og:description" content="Portfolio of Mahmoud El-Tohamy, a Full Stack Developer specializing in MERN Stack and Next.js." />
-        <meta property="og:image" content="https://mahmoud-el-tohamy-portfolio.vercel.app/images/PP.png" />
+        <meta property="og:image" content="https://mahmoud-el-tohamy-portfolio.vercel.app/images/og-image.jpg" />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://mahmoud-el-tohamy-portfolio.vercel.app/" />
         <meta property="twitter:title" content={`${data.name} | Full Stack Developer`} />
         <meta property="twitter:description" content="Portfolio of Mahmoud El-Tohamy, a Full Stack Developer specializing in MERN Stack and Next.js." />
-        <meta property="twitter:image" content="https://mahmoud-el-tohamy-portfolio.vercel.app/images/PP.png" />
+        <meta property="twitter:image" content="https://mahmoud-el-tohamy-portfolio.vercel.app/images/og-image.jpg" />
       </Head>
 
       <div className="gradient-circle"></div>
