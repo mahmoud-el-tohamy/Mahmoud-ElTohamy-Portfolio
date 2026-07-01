@@ -83,11 +83,11 @@ export default function Home() {
         <title>{data.name} | Full Stack Developer</title>
         <meta
           name="description"
-          content="Portfolio of Mahmoud El-Tohamy, a Full Stack Developer specializing in MERN Stack and Next.js."
+          content="Portfolio of Mahmoud El-Tohamy, a Full Stack Developer from Mansoura specializing in React, Next.js, Node.js, and MongoDB."
         />
         <meta
           name="keywords"
-          content="Mahmoud El-Tohamy, Full Stack Developer, MERN, Next.js, React, Node.js, Web Development, Portfolio"
+          content="Mahmoud El-Tohamy, Full Stack Developer, React, Next.js, Node.js, MongoDB, Mansoura, Web Development, Portfolio, محمود التهامي, iti, معهد تكنولوجيا المعلومات، تطوير البرمجيات, مبرمج مصري، مطور واجهات أمامية، مصمم واجهات أمامية، مطور تطبيقات ويب، مصمم واجهات، مصمم تجربة المستخدم، مهندس برمجيات، واجهة أمامية، خلفية، تطوير ويب، تطوير برمجيات"
         />
         <meta
           name="google-site-verification"
@@ -107,7 +107,7 @@ export default function Home() {
         />
         <meta
           property="og:description"
-          content="Portfolio of Mahmoud El-Tohamy, a Full Stack Developer specializing in MERN Stack and Next.js."
+          content="Portfolio of Mahmoud El-Tohamy, a Full Stack Developer from Mansoura specializing in React, Next.js, Node.js, and MongoDB."
         />
         <meta
           property="og:image"
@@ -126,7 +126,7 @@ export default function Home() {
         />
         <meta
           property="twitter:description"
-          content="Portfolio of Mahmoud El-Tohamy, a Full Stack Developer specializing in MERN Stack and Next.js."
+          content="Portfolio of Mahmoud El-Tohamy, a Full Stack Developer from Mansoura specializing in React, Next.js, Node.js, and MongoDB."
         />
         <meta
           property="twitter:image"
