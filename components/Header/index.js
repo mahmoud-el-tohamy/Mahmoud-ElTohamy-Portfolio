@@ -9,6 +9,7 @@ const Header = ({
   handleWorkScroll,
   handleSkillsScroll,
   handleExperienceScroll,
+  handleVolunteeringScroll,
   handleServicesScroll,
   handleAboutScroll,
   handleContactScroll,
@@ -21,7 +22,7 @@ const Header = ({
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["work", "skills", "experience", "services", "about", "contact"];
+      const sections = ["work", "skills", "experience", "volunteering", "services", "about", "contact"];
       let currentSection = "";
       
       for (const section of sections) {
@@ -55,7 +56,7 @@ const Header = ({
             <div className="flex items-center justify-between p-2 relative z-50">
               <img
                 onClick={() => router.push("/")}
-                src="/images/logo.png"
+                src="/images/logo.webp"
                 alt={name}
                 className="h-10 cursor-pointer link"
               />
@@ -104,6 +105,7 @@ const Header = ({
                       <Button onClick={() => { handleWorkScroll(); close(); }} classes={`w-full justify-center py-4 text-center hover:scale-110 ${getActiveClass('work')}`}>Work</Button>
                       <Button onClick={() => { handleSkillsScroll(); close(); }} classes={`w-full justify-center py-4 text-center hover:scale-110 ${getActiveClass('skills')}`}>Skills</Button>
                       <Button onClick={() => { handleExperienceScroll(); close(); }} classes={`w-full justify-center py-4 text-center hover:scale-110 ${getActiveClass('experience')}`}>Experience</Button>
+                      <Button onClick={() => { handleVolunteeringScroll(); close(); }} classes={`w-full justify-center py-4 text-center hover:scale-110 ${getActiveClass('volunteering')}`}>Volunteering</Button>
                       <Button onClick={() => { handleServicesScroll(); close(); }} classes={`w-full justify-center py-4 text-center hover:scale-110 ${getActiveClass('services')}`}>Services</Button>
                       <Button onClick={() => { handleAboutScroll(); close(); }} classes={`w-full justify-center py-4 text-center hover:scale-110 ${getActiveClass('about')}`}>About</Button>
                       {showBlog && (
@@ -162,7 +164,7 @@ const Header = ({
       >
         <img
           onClick={() => router.push("/")}
-          src="/images/logo.png"
+          src="/images/logo.webp"
           alt={name}
           className="h-10 laptop:h-14 cursor-pointer hover:scale-105 transition-transform"
         />
@@ -171,6 +173,7 @@ const Header = ({
             <Button onClick={handleWorkScroll} classes={getActiveClass('work')}>Work</Button>
             <Button onClick={handleSkillsScroll} classes={getActiveClass('skills')}>Skills</Button>
             <Button onClick={handleExperienceScroll} classes={getActiveClass('experience')}>Experience</Button>
+            <Button onClick={handleVolunteeringScroll} classes={getActiveClass('volunteering')}>Volunteering</Button>
             <Button onClick={handleServicesScroll} classes={getActiveClass('services')}>Services</Button>
             <Button onClick={handleAboutScroll} classes={getActiveClass('about')}>About</Button>
             {showBlog && (

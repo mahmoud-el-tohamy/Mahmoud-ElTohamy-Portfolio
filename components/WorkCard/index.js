@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../Button";
+import Image from "next/image";
 
 const WorkCard = ({ img, name, description, techStack, githubUrl, previewUrl }) => {
   const cardRef = React.useRef(null);
@@ -32,11 +33,14 @@ const WorkCard = ({ img, name, description, techStack, githubUrl, previewUrl }) 
           transition: transformStyle.includes("rotateX(0deg)") ? "transform 0.5s ease" : "none" 
         }}
       >
-        <img
-          alt={name}
-          className="h-full w-full object-cover transition-all ease-out duration-500 group-hover:scale-110"
+        <Image
+          alt={name ? `${name} - Project Preview` : "Project Preview"}
+          className="transition-all ease-out duration-500 group-hover:scale-110"
           src={img}
-        ></img>
+          layout="fill"
+          objectFit="cover"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
       </div>
       <h1 className="mt-5 text-3xl font-medium">
         {name ? name : "Project Name"}

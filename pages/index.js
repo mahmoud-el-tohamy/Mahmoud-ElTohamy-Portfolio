@@ -12,10 +12,12 @@ import {
 import Footer from "../components/Footer";
 import Skills from "../components/Skills";
 import Experience from "../components/Experience";
+import Volunteering from "../components/Volunteering";
 import Head from "next/head";
 import Button from "../components/Button";
 import BackToTop from "../components/BackToTop";
-import { GraduationCap, Trophy, Users } from "lucide-react";
+import { GraduationCap, Trophy, Users, Briefcase, Wrench, User } from "lucide-react";
+import Image from "next/image";
 
 // Local Data
 import data from "../data/portfolio.json";
@@ -27,6 +29,7 @@ export default function Home() {
   const contactRef = useRef();
   const skillsRef = useRef();
   const experienceRef = useRef();
+  const volunteeringRef = useRef();
   const servicesRef = useRef();
   // Handling Scroll
   const handleWorkScroll = () => {
@@ -48,6 +51,14 @@ export default function Home() {
   const handleExperienceScroll = () => {
     window.scrollTo({
       top: experienceRef.current.offsetTop - 100,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
+  const handleVolunteeringScroll = () => {
+    window.scrollTo({
+      top: volunteeringRef.current.offsetTop - 100,
       left: 0,
       behavior: "smooth",
     });
@@ -93,7 +104,7 @@ export default function Home() {
           name="google-site-verification"
           content="zCMPOooCyCHBd7z7Tv2z0jCmNwzIvjK-mMcIpA3xEh8"
         />
-        <link rel="icon" type="image/png" href="/images/PP.png" />
+        <link rel="icon" type="image/png" href="/favicon.ico" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
@@ -132,6 +143,24 @@ export default function Home() {
           property="twitter:image"
           content="https://mahmoud-el-tohamy-portfolio.vercel.app/images/og-image.jpg"
         />
+
+        {/* Schema Markup */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Mahmoud El-Tohamy",
+              "jobTitle": "Full Stack Developer",
+              "url": "https://mahmoud-el-tohamy-portfolio.vercel.app",
+              "sameAs": [
+                "https://github.com/mahmoud-el-tohamy",
+                "https://linkedin.com/in/mahmoud-el-tohamy"
+              ]
+            })
+          }}
+        />
       </Head>
 
       <div className="gradient-circle"></div>
@@ -142,6 +171,7 @@ export default function Home() {
           handleWorkScroll={handleWorkScroll}
           handleSkillsScroll={handleSkillsScroll}
           handleExperienceScroll={handleExperienceScroll}
+          handleVolunteeringScroll={handleVolunteeringScroll}
           handleServicesScroll={handleServicesScroll}
           handleAboutScroll={handleAboutScroll}
           handleContactScroll={handleContactScroll}
@@ -181,10 +211,14 @@ export default function Home() {
             className="w-full laptop:w-2/5 flex justify-center laptop:justify-end mt-10 laptop:mt-0"
           >
             <div className="relative w-72 h-72 laptop:w-[500px] laptop:h-[500px]">
-              <img
+              <Image
                 src="/images/PP.png"
-                alt="Mahmoud El-Tohamy"
-                className="w-full h-full object-contain drop-shadow-2xl hover:scale-105 transition-all duration-500 ease-out z-10 relative"
+                alt="Mahmoud El-Tohamy - Full Stack Developer"
+                layout="fill"
+                objectFit="contain"
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="drop-shadow-2xl hover:scale-105 transition-all duration-500 ease-out z-10"
                 style={{
                   WebkitMaskImage:
                     "linear-gradient(to bottom, black 80%, transparent 100%)",
@@ -202,7 +236,10 @@ export default function Home() {
           ref={workRef}
         >
           <FadeUp>
-            <h1 className="text-2xl text-bold">Work.</h1>
+            <h1 className="text-2xl text-bold flex items-center gap-2">
+              <Briefcase className="w-6 h-6 text-[#004aad] dark:text-blue-400" />
+              Work.
+            </h1>
           </FadeUp>
 
           <StaggerContainer className="mt-5 laptop:mt-10 grid grid-cols-1 tablet:grid-cols-2 gap-4">
@@ -232,13 +269,22 @@ export default function Home() {
           </FadeUp>
         </div>
 
+        <div id="volunteering" ref={volunteeringRef}>
+          <FadeUp>
+            <Volunteering />
+          </FadeUp>
+        </div>
+
         <div
           id="services"
           className="mt-10 laptop:mt-30 p-2 laptop:p-0"
           ref={servicesRef}
         >
           <FadeUp>
-            <h1 className="text-2xl text-bold">Services.</h1>
+            <h1 className="text-2xl text-bold flex items-center gap-2">
+              <Wrench className="w-6 h-6 text-[#004aad] dark:text-blue-400" />
+              Services.
+            </h1>
           </FadeUp>
           <StaggerContainer className="mt-5 grid grid-cols-1 laptop:grid-cols-2 gap-6">
             {data.services.map((service, index) => (
@@ -259,7 +305,10 @@ export default function Home() {
           ref={aboutRef}
         >
           <FadeUp>
-            <h1 className="tablet:m-10 text-2xl text-bold">About.</h1>
+            <h1 className="tablet:m-10 text-2xl text-bold flex items-center gap-2">
+              <User className="w-6 h-6 text-[#004aad] dark:text-blue-400" />
+              About.
+            </h1>
           </FadeUp>
           <div className="tablet:m-10 mt-5 flex flex-col laptop:flex-row items-center justify-between gap-20">
             <FadeUp className="w-full laptop:w-3/5 p-6 tablet:p-10 rounded-3xl bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 shadow-xl backdrop-blur-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,74,173,0.15)]">

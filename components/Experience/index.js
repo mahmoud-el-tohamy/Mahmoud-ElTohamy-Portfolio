@@ -1,5 +1,6 @@
 import React from "react";
 import data from "../../data/portfolio.json";
+import { Layers } from "lucide-react";
 
 const TimelineItem = ({
   dates,
@@ -48,7 +49,10 @@ const Experience = () => {
 
   return (
     <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">
-      <h1 className="text-2xl text-bold mb-5 laptop:mb-10">Experience & Education.</h1>
+      <h1 className="text-2xl text-bold mb-5 laptop:mb-10 flex items-center gap-2">
+        <Layers className="w-6 h-6 text-[#004aad] dark:text-blue-400" />
+        Experience & Education.
+      </h1>
       
       <div className="relative">
         {resume.experiences.map((exp) => (

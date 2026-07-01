@@ -2,6 +2,7 @@ import React from "react";
 import Socials from "../Socials";
 import Link from "next/link";
 import ContactForm from "../ContactForm";
+import { Mail } from "lucide-react";
 
 const Footer = ({ contactRef }) => {
   return (
@@ -29,7 +30,10 @@ const Footer = ({ contactRef }) => {
 
             {/* Content (Right) */}
             <div className="w-full laptop:w-3/5">
-              <h1 className="text-2xl text-bold mb-5">Contact.</h1>
+              <h1 className="text-2xl text-bold mb-5 flex items-center gap-2">
+                <Mail className="w-6 h-6 text-[#004aad] dark:text-blue-400" />
+                Contact.
+              </h1>
               <h1 className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold">
                 LET&apos;S WORK
               </h1>
