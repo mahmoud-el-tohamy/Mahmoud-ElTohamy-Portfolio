@@ -97,56 +97,57 @@ const Header = ({
               leaveTo="opacity-0 -translate-y-10"
             >
               <Popover.Panel
-                className="fixed inset-0 z-40 flex flex-col items-center justify-center bg-white/95 dark:bg-black/95 backdrop-blur-2xl h-screen w-screen"
+                className="fixed inset-0 z-40 flex flex-col items-center justify-start overflow-y-auto bg-white/95 dark:bg-black/95 backdrop-blur-2xl h-screen w-screen"
+                style={{ paddingTop: '6rem', paddingBottom: '2rem' }}
               >
-                <div className="flex flex-col items-center gap-8 w-full px-8 text-2xl font-medium">
+                <div className="flex flex-col items-center gap-4 w-full px-8 text-xl font-medium">
                   {!isBlog ? (
                     <>
-                      <Button onClick={() => { handleWorkScroll(); close(); }} classes={`w-full justify-center py-4 text-center hover:scale-110 ${getActiveClass('work')}`}>Work</Button>
-                      <Button onClick={() => { handleSkillsScroll(); close(); }} classes={`w-full justify-center py-4 text-center hover:scale-110 ${getActiveClass('skills')}`}>Skills</Button>
-                      <Button onClick={() => { handleExperienceScroll(); close(); }} classes={`w-full justify-center py-4 text-center hover:scale-110 ${getActiveClass('experience')}`}>Experience</Button>
-                      <Button onClick={() => { handleVolunteeringScroll(); close(); }} classes={`w-full justify-center py-4 text-center hover:scale-110 ${getActiveClass('volunteering')}`}>Volunteering</Button>
-                      <Button onClick={() => { handleServicesScroll(); close(); }} classes={`w-full justify-center py-4 text-center hover:scale-110 ${getActiveClass('services')}`}>Services</Button>
-                      <Button onClick={() => { handleAboutScroll(); close(); }} classes={`w-full justify-center py-4 text-center hover:scale-110 ${getActiveClass('about')}`}>About</Button>
+                      <Button onClick={() => { handleWorkScroll(); close(); }} classes={`w-full justify-center py-3 text-center hover:scale-110 ${getActiveClass('work')}`}>Work</Button>
+                      <Button onClick={() => { handleSkillsScroll(); close(); }} classes={`w-full justify-center py-3 text-center hover:scale-110 ${getActiveClass('skills')}`}>Skills</Button>
+                      <Button onClick={() => { handleExperienceScroll(); close(); }} classes={`w-full justify-center py-3 text-center hover:scale-110 ${getActiveClass('experience')}`}>Experience</Button>
+                      <Button onClick={() => { handleVolunteeringScroll(); close(); }} classes={`w-full justify-center py-3 text-center hover:scale-110 ${getActiveClass('volunteering')}`}>Volunteering</Button>
+                      <Button onClick={() => { handleServicesScroll(); close(); }} classes={`w-full justify-center py-3 text-center hover:scale-110 ${getActiveClass('services')}`}>Services</Button>
+                      <Button onClick={() => { handleAboutScroll(); close(); }} classes={`w-full justify-center py-3 text-center hover:scale-110 ${getActiveClass('about')}`}>About</Button>
                       {showBlog && (
-                        <Button onClick={() => { router.push("/blog"); close(); }} classes="w-full justify-center py-4 text-center hover:scale-110">Blog</Button>
+                        <Button onClick={() => { router.push("/blog"); close(); }} classes="w-full justify-center py-3 text-center hover:scale-110">Blog</Button>
                       )}
                       <Button
                         onClick={() => {
                           handleContactScroll ? handleContactScroll() : window.scrollTo(0, 0);
                           close();
                         }}
-                        classes={`w-full justify-center py-4 text-center hover:scale-110 ${getActiveClass('contact')}`}
+                        classes={`w-full justify-center py-3 text-center hover:scale-110 ${getActiveClass('contact')}`}
                       >
                         Contact
                       </Button>
                       <Button
                         type="primary"
                         onClick={() => { window.open("/Mahmoud_ElTohamy_CV.pdf", "_blank"); close(); }}
-                        classes="w-full justify-center py-4 mt-6 shadow-xl !text-xl"
+                        classes="w-full justify-center py-4 mt-2 shadow-xl !text-xl"
                       >
                         Download CV
                       </Button>
                     </>
                   ) : (
                     <>
-                      <Button onClick={() => { router.push("/"); close(); }} classes="w-full justify-center py-4 text-center hover:scale-110">Home</Button>
+                      <Button onClick={() => { router.push("/"); close(); }} classes="w-full justify-center py-3 text-center hover:scale-110">Home</Button>
                       {showBlog && (
-                        <Button onClick={() => { router.push("/blog"); close(); }} classes="w-full justify-center py-4 text-center hover:scale-110">Blog</Button>
+                        <Button onClick={() => { router.push("/blog"); close(); }} classes="w-full justify-center py-3 text-center hover:scale-110">Blog</Button>
                       )}
                       <Button
                         onClick={() => {
                           handleContactScroll ? handleContactScroll() : window.scrollTo(0, 0);
                           close();
                         }}
-                        classes="w-full justify-center py-4 text-center hover:scale-110"
+                        classes="w-full justify-center py-3 text-center hover:scale-110"
                       >
                         Contact
                       </Button>
                       <Button
                         type="primary"
                         onClick={() => { window.open("/Mahmoud_ElTohamy_CV.pdf", "_blank"); close(); }}
-                        classes="w-full justify-center py-4 mt-6 shadow-xl !text-xl"
+                        classes="w-full justify-center py-4 mt-2 shadow-xl !text-xl"
                       >
                         Download CV
                       </Button>
