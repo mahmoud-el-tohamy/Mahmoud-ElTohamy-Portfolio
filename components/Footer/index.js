@@ -39,10 +39,12 @@ const Footer = ({ contactRef }) => {
 
               <ContactForm />
 
-              <div className="mt-10">
-                <Socials />
-              </div>
             </div>
+          </div>
+          
+          {/* Centered Socials across full page */}
+          <div className="mt-20 w-full flex justify-center pb-10">
+            <Socials className="justify-center" />
           </div>
         </div>
       </div>

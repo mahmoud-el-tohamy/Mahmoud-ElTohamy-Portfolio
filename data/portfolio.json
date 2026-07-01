@@ -29,7 +29,8 @@
     {
       "id": "1",
       "title": "MoneySphere - Personal Finance Tracker",
-      "description": "MERN Stack, AWS Amplify, EC2, RDS (PostgreSQL). Won 1st place in the ITI branch-level hackathon. Deployed MVP in under 24 hours.",
+      "description": "Won 1st place in the ITI branch-level hackathon by taking a Personal Finance Tracker from idea to a deployed MVP in under 24 hours.",
+      "techStack": ["MERN Stack", "AWS Amplify", "EC2", "RDS (PostgreSQL)"],
       "imageSrc": "/images/projects/moneysphare.png",
       "githubUrl": "https://github.com/iamArsany/MoneySphere",
       "previewUrl": ""
@@ -37,7 +38,8 @@
     {
       "id": "2",
       "title": "Pharma - Clinic Management System",
-      "description": "Django, Django REST Framework. Full-stack clinic system with role-based access, end-to-end appointment workflow, and live doctor queue.",
+      "description": "Developed a full-stack clinic system with role-based access; implemented an end-to-end appointment workflow with a live doctor queue and admin analytics.",
+      "techStack": ["Django", "Django REST Framework", "Python"],
       "imageSrc": "/images/projects/Pharma.png",
       "githubUrl": "https://github.com/K-Sultan/Pharma",
       "previewUrl": ""
@@ -45,7 +47,8 @@
     {
       "id": "3",
       "title": "Sonesta - Hotel Management System",
-      "description": "Laravel 13, Inertia.js, Vue 3. Full-stack hotel management system with role-based dashboards, API authentication, and analytics.",
+      "description": "Implemented a full-stack hotel management system with role-based dashboards for 4 user roles, API authentication with Sanctum, and analytics.",
+      "techStack": ["Laravel 13", "Inertia.js", "Vue 3"],
       "imageSrc": "/images/projects/sonesta.png",
       "githubUrl": "https://github.com/ahmedfaheem/Sonesta",
       "previewUrl": ""
@@ -53,7 +56,8 @@
     {
       "id": "4",
       "title": "Vue 3 Shop - E-Commerce Storefront",
-      "description": "Vue 3, Vite, Tailwind CSS. Responsive storefront with reactive state management, interactive cart, and 3D animations.",
+      "description": "Built a responsive storefront with reactive state management, interactive cart, and a 60fps pure-CSS 3D animation system on product cards.",
+      "techStack": ["Vue 3", "Vite", "Tailwind CSS"],
       "imageSrc": "/images/projects/vue store.png",
       "githubUrl": "https://github.com/mahmoud-el-tohamy/vue-simple-shop",
       "previewUrl": "https://vue-simple-shop.vercel.app/"
@@ -61,7 +65,8 @@
     {
       "id": "5",
       "title": "Quizzy - Quiz Management Web App",
-      "description": "Vanilla JavaScript. Quiz engine supporting 15+ questions per session with automated scoring and dynamic rendering.",
+      "description": "Engineered a quiz engine supporting 15+ questions per session with automated 100-point scoring and dynamic question rendering.",
+      "techStack": ["Vanilla JavaScript", "HTML5", "CSS3"],
       "imageSrc": "/images/projects/quizzy.png",
       "githubUrl": "https://github.com/mw205/quizzy",
       "previewUrl": "https://mw205.github.io/quizzy/"
@@ -69,7 +74,8 @@
     {
       "id": "6",
       "title": "Chefio - Full-Stack Recipe Sharing Platform",
-      "description": "Next.js 14, TypeScript. Front-end for a recipe sharing platform with discovery, social interactions, and advanced filtered search.",
+      "description": "Designed and developed the front-end for a recipe sharing platform with discovery, social interactions, and advanced filtered search.",
+      "techStack": ["Next.js 14", "TypeScript", "Tailwind CSS"],
       "imageSrc": "/images/projects/chefio.png",
       "githubUrl": "https://github.com/mahmoud-el-tohamy/chefio",
       "previewUrl": "https://chefio-gamma.vercel.app/"
@@ -79,28 +85,30 @@
     {
       "id": "1",
       "title": "Front-End Development",
-      "description": "Building scalable, high-performance web applications using React.js, Next.js, Angular, and Vue.js with responsive design."
+      "description": "Building scalable, high-performance web applications using React.js, Next.js, Angular, and Vue.js with responsive design.",
+      "icon": "MonitorSmartphone"
     },
     {
       "id": "2",
       "title": "Back-End Development",
-      "description": "Developing robust APIs and server-side logic using Node.js, Express.js, PHP, Laravel, and Django REST Framework."
+      "description": "Developing robust APIs and server-side logic using Node.js, Express.js, PHP, Laravel, and Django REST Framework.",
+      "icon": "ServerCog"
     },
     {
       "id": "3",
       "title": "Database Design & Management",
-      "description": "Designing and managing databases utilizing MongoDB, MySQL, and PostgreSQL for efficient data storage and retrieval."
+      "description": "Designing and managing databases utilizing MongoDB, MySQL, and PostgreSQL for efficient data storage and retrieval.",
+      "icon": "Database"
     },
     {
       "id": "4",
       "title": "Instructor & Training",
-      "description": "Delivering programming and front-end development courses, mentoring students, and teaching web fundamentals."
+      "description": "Delivering programming and front-end development courses, mentoring students, and teaching web fundamentals.",
+      "icon": "GraduationCap"
     }
   ],
   "aboutpara": "Full Stack Developer with hands-on experience building scalable, high-performance web applications using Next.js, React.js, TypeScript, Node.js, and MongoDB. Currently completing the ITI 9-Month Open Source Program following an NTI MEAN Stack government scholarship. Combines solid engineering fundamentals with real-world teaching experience, having trained 100+ students in Programming and Front-End Development through government-backed initiatives.",
   "resume": {
-    "tagline": "👋 I'm a Full Stack Developer, specializing in MERN & Next.js.",
-    "description": "I have hands-on experience building scalable web applications. Combines solid engineering fundamentals with real-world teaching experience.",
     "experiences": [
       {
         "id": "1",

@@ -111,7 +111,7 @@ export default function Home() {
                 </h1>
               </StaggerItem>
               <StaggerItem>
-                <h1 className="text-3xl tablet:text-5xl laptop:text-5xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-full">
+                <h1 className="text-2xl tablet:text-4xl laptop:text-4xl laptopl:text-6xl p-1 tablet:p-2 text-bold w-full text-gray-500 dark:text-gray-400">
                   {data.headerTaglineFour}
                 </h1>
               </StaggerItem>
@@ -146,6 +146,7 @@ export default function Home() {
                   img={project.imageSrc}
                   name={project.title}
                   description={project.description}
+                  techStack={project.techStack}
                   githubUrl={project.githubUrl}
                   previewUrl={project.previewUrl}
                 />
@@ -175,6 +176,7 @@ export default function Home() {
                 <ServiceCard
                   name={service.title}
                   description={service.description}
+                  icon={service.icon}
                 />
               </StaggerItem>
             ))}

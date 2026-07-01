@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../Button";
 
-const WorkCard = ({ img, name, description, githubUrl, previewUrl }) => {
+const WorkCard = ({ img, name, description, techStack, githubUrl, previewUrl }) => {
   const cardRef = React.useRef(null);
   const [transformStyle, setTransformStyle] = React.useState("perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)");
 
@@ -41,9 +41,18 @@ const WorkCard = ({ img, name, description, githubUrl, previewUrl }) => {
       <h1 className="mt-5 text-3xl font-medium">
         {name ? name : "Project Name"}
       </h1>
-      <h2 className="text-xl opacity-50">
+      <h2 className="text-xl opacity-50 mt-2">
         {description ? description : "Description"}
       </h2>
+      {techStack && techStack.length > 0 && (
+        <div className="mt-3 flex flex-wrap gap-2">
+          {techStack.map((tech, idx) => (
+            <span key={idx} className="px-3 py-1 text-xs tablet:text-sm font-medium rounded-full bg-blue-500/10 text-blue-600 dark:bg-white/10 dark:text-gray-300 border border-blue-500/20 dark:border-white/20">
+              {tech}
+            </span>
+          ))}
+        </div>
+      )}
       <div className="mt-4 flex flex-wrap gap-2">
         {githubUrl && (
           <Button onClick={() => window.open(githubUrl, "_blank")}>GitHub Link</Button>
