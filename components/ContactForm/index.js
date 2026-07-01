@@ -65,6 +65,7 @@ const ContactForm = () => {
               name="name" 
               value={formData.name}
               onChange={handleChange}
+              autoComplete="name"
               required
               className="px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#004aad] dark:focus:ring-white transition-all text-gray-900 dark:text-white"
               placeholder="John Doe"
@@ -78,6 +79,7 @@ const ContactForm = () => {
               name="email" 
               value={formData.email}
               onChange={handleChange}
+              autoComplete="email"
               required
               className="px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#004aad] dark:focus:ring-white transition-all text-gray-900 dark:text-white"
               placeholder="john@example.com"
