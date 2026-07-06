@@ -50,7 +50,7 @@ const Header = ({
 
   return (
     <>
-      <Popover className="block tablet:hidden fixed top-0 left-0 right-0 z-50 px-4 py-4 backdrop-blur-md bg-white/70 dark:bg-black/70 border-b border-gray-200 dark:border-gray-800">
+      <Popover as="nav" className="block tablet:hidden fixed top-0 left-0 right-0 z-50 px-4 py-4 backdrop-blur-md bg-white/70 dark:bg-black/70 border-b border-gray-200 dark:border-gray-800">
         {({ open, close }) => (
           <>
             <div className="flex items-center justify-between p-2 relative z-50">
@@ -160,7 +160,7 @@ const Header = ({
         )}
       </Popover>
 
-      <div
+      <nav
         className="hidden flex-row items-center justify-between fixed top-0 left-0 right-0 z-50 px-4 tablet:px-20 py-3 backdrop-blur-lg bg-white/80 dark:bg-black/80 border-b border-gray-200/50 dark:border-gray-800/50 dark:text-white tablet:flex shadow-sm"
       >
         <img
@@ -221,7 +221,7 @@ const Header = ({
             )}
           </div>
         )}
-      </div>
+      </nav>
     </>
   );
 };

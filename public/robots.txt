@@ -1,4 +1,9 @@
+# *
 User-agent: *
 Allow: /
 
+# Host
+Host: https://mahmoud-el-tohamy-portfolio.vercel.app/
+
+# Sitemaps
 Sitemap: https://mahmoud-el-tohamy-portfolio.vercel.app/sitemap.xml

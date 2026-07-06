@@ -42,12 +42,12 @@ const WorkCard = ({ img, name, description, techStack, githubUrl, previewUrl }) 
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
       </div>
-      <h1 className="mt-5 text-3xl font-medium">
+      <h3 className="mt-5 text-3xl font-medium">
         {name ? name : "Project Name"}
-      </h1>
-      <h2 className="text-xl opacity-50 mt-2">
+      </h3>
+      <p className="text-xl opacity-50 mt-2">
         {description ? description : "Description"}
-      </h2>
+      </p>
       {techStack && techStack.length > 0 && (
         <div className="mt-3 flex flex-wrap gap-2">
           {techStack.map((tech, idx) => (

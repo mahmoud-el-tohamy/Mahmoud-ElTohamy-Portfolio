@@ -100,6 +100,8 @@ export default function Home() {
           name="keywords"
           content="Mahmoud El-Tohamy, Full Stack Developer, React, Next.js, Node.js, MongoDB, Mansoura, Web Development, Portfolio, محمود التهامي, iti, معهد تكنولوجيا المعلومات، تطوير البرمجيات, مبرمج مصري، مطور واجهات أمامية، مصمم واجهات أمامية، مطور تطبيقات ويب، مصمم واجهات، مصمم تجربة المستخدم، مهندس برمجيات، واجهة أمامية، خلفية، تطوير ويب، تطوير برمجيات"
         />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://mahmoud-el-tohamy-portfolio.vercel.app/" />
         <meta
           name="google-site-verification"
           content="zCMPOooCyCHBd7z7Tv2z0jCmNwzIvjK-mMcIpA3xEh8"
@@ -108,6 +110,8 @@ export default function Home() {
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Mahmoud El-Tohamy Portfolio" />
+        <meta property="og:locale" content="en_US" />
         <meta
           property="og:url"
           content="https://mahmoud-el-tohamy-portfolio.vercel.app/"
@@ -127,6 +131,8 @@ export default function Home() {
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:site" content="@iammahmoudx" />
+        <meta property="twitter:creator" content="@iammahmoudx" />
         <meta
           property="twitter:url"
           content="https://mahmoud-el-tohamy-portfolio.vercel.app/"
@@ -179,7 +185,7 @@ export default function Home() {
       <div className="gradient-circle"></div>
       <div className="gradient-circle-bottom"></div>
 
-      <div className="container mx-auto mb-10 pt-24 px-4 sm:px-6">
+      <main className="container mx-auto mb-10 pt-24 px-4 sm:px-6">
         <Header
           handleWorkScroll={handleWorkScroll}
           handleSkillsScroll={handleSkillsScroll}
@@ -193,9 +199,9 @@ export default function Home() {
           <div className="w-full laptop:w-3/5">
             <StaggerContainer className="mt-5">
               <StaggerItem>
-                <h1 className="text-3xl tablet:text-5xl laptop:text-5xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-full">
+                <h2 className="text-3xl tablet:text-5xl laptop:text-5xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-full">
                   {data.headerTaglineOne}
-                </h1>
+                </h2>
               </StaggerItem>
               <StaggerItem>
                 <h1 className="text-3xl tablet:text-5xl laptop:text-5xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-full">
@@ -203,14 +209,14 @@ export default function Home() {
                 </h1>
               </StaggerItem>
               <StaggerItem>
-                <h1 className="text-3xl tablet:text-5xl laptop:text-5xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-full">
+                <h2 className="text-3xl tablet:text-5xl laptop:text-5xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-full">
                   {data.headerTaglineThree}
-                </h1>
+                </h2>
               </StaggerItem>
               <StaggerItem>
-                <h1 className="text-2xl tablet:text-4xl laptop:text-4xl laptopl:text-6xl p-1 tablet:p-2 text-bold w-full text-gray-500 dark:text-gray-400">
+                <p className="text-2xl tablet:text-4xl laptop:text-4xl laptopl:text-6xl p-1 tablet:p-2 text-bold w-full text-gray-500 dark:text-gray-400">
                   {data.headerTaglineFour}
-                </h1>
+                </p>
               </StaggerItem>
             </StaggerContainer>
 
@@ -243,7 +249,7 @@ export default function Home() {
             </div>
           </FadeUp>
         </div>
-        <div
+        <section
           id="work"
           className="mt-10 laptop:mt-30 p-2 laptop:p-0"
           ref={workRef}
@@ -269,26 +275,26 @@ export default function Home() {
               </StaggerItem>
             ))}
           </StaggerContainer>
-        </div>
+        </section>
 
-        <div id="skills" ref={skillsRef}>
+        <section id="skills" ref={skillsRef}>
           <FadeUp>
             <Skills />
           </FadeUp>
-        </div>
-        <div id="experience" ref={experienceRef}>
+        </section>
+        <section id="experience" ref={experienceRef}>
           <FadeUp>
             <Experience />
           </FadeUp>
-        </div>
+        </section>
 
-        <div id="volunteering" ref={volunteeringRef}>
+        <section id="volunteering" ref={volunteeringRef}>
           <FadeUp>
             <Volunteering />
           </FadeUp>
-        </div>
+        </section>
 
-        <div
+        <section
           id="services"
           className="mt-10 laptop:mt-30 p-2 laptop:p-0"
           ref={servicesRef}
@@ -310,9 +316,9 @@ export default function Home() {
               </StaggerItem>
             ))}
           </StaggerContainer>
-        </div>
+        </section>
 
-        <div
+        <section
           id="about"
           className="mt-10 laptop:mt-40 p-2 laptop:p-0"
           ref={aboutRef}
@@ -397,9 +403,9 @@ export default function Home() {
               ></div>
             </div>
           </div>
-        </div>
+        </section>
         <Footer contactRef={contactRef} />
-      </div>
+      </main>
       <BackToTop />
     </div>
   );
