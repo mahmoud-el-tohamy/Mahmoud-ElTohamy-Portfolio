@@ -4,9 +4,10 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import React, { useState, useEffect, Fragment } from "react";
 import Button from "../Button";
-import data from "../../data/portfolio.json";
+import { Globe } from "lucide-react";
 
 const Header = ({
+  data,
   handleWorkScroll,
   handleSkillsScroll,
   handleExperienceScroll,
@@ -51,12 +52,18 @@ const Header = ({
 
   return (
     <>
-      <Popover as="nav" className="block tablet:hidden fixed top-0 left-0 right-0 z-50 px-4 py-4 backdrop-blur-md bg-white/70 dark:bg-black/70 border-b border-gray-200 dark:border-gray-800">
+      <Popover
+        as="nav"
+        className="block tablet:hidden fixed top-0 left-0 right-0 z-50 px-4 py-4 backdrop-blur-md bg-white/70 dark:bg-black/70 border-b border-gray-200 dark:border-gray-800"
+      >
         {({ open, close }) => (
           <>
             <div className="flex items-center justify-between p-2 relative z-50">
               <Link href="/">
-                <a aria-label="Home" className="focus:outline-none focus:ring-2 focus:ring-blue-500/50 rounded-lg flex items-center">
+                <a
+                  aria-label="Home"
+                  className="focus:outline-none focus:ring-2 focus:ring-blue-500/50 rounded-lg flex items-center"
+                >
                   <img
                     src="/images/logo.webp"
                     alt={name}
@@ -69,15 +76,41 @@ const Header = ({
                 {data.darkMode && (
                   <Button
                     aria-label="Toggle Dark Mode"
-                    onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                    onClick={() =>
+                      setTheme(theme === "dark" ? "light" : "dark")
+                    }
                     classes="!p-2"
                   >
-                    <img className="h-6 dark:hidden" src="/images/sun.svg" alt="Sun" />
-                    <img className="h-6 hidden dark:block" src="/images/moon.svg" alt="Moon" />
+                    <img
+                      className="h-6 dark:hidden"
+                      src="/images/sun.svg"
+                      alt="Sun"
+                    />
+                    <img
+                      className="h-6 hidden dark:block"
+                      src="/images/moon.svg"
+                      alt="Moon"
+                    />
                   </Button>
                 )}
 
-                <Popover.Button aria-label="Toggle Menu" className="p-2 outline-none focus:outline-none focus:ring-2 focus:ring-blue-500/50 rounded-lg">
+                <button
+                  aria-label="Switch Language"
+                  onClick={() =>
+                    router.push(router.pathname, router.asPath, {
+                      locale: router.locale === "en" ? "ar" : "en",
+                    })
+                  }
+                  className="p-2 flex items-center gap-1.5 rounded-lg text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-colors font-bold text-xs"
+                >
+                  <Globe className="w-4 h-4" />
+                  <span className="leading-[0]">{router.locale === "en" ? "AR" : "EN"}</span>
+                </button>
+
+                <Popover.Button
+                  aria-label="Toggle Menu"
+                  className="p-2 outline-none focus:outline-none focus:ring-2 focus:ring-blue-500/50 rounded-lg"
+                >
                   <img
                     className="h-6 dark:hidden transition-transform duration-300"
                     src={`/images/${!open ? "menu.svg" : "cancel.svg"}`}
@@ -91,7 +124,7 @@ const Header = ({
                 </Popover.Button>
               </div>
             </div>
-            
+
             <Transition
               as={Fragment}
               enter="transition ease-out duration-300"
@@ -103,58 +136,142 @@ const Header = ({
             >
               <Popover.Panel
                 className="fixed inset-0 z-40 flex flex-col items-center justify-start overflow-y-auto bg-white/95 dark:bg-black/95 backdrop-blur-2xl h-screen w-screen"
-                style={{ paddingTop: '6rem', paddingBottom: '2rem' }}
+                style={{ paddingTop: "6rem", paddingBottom: "2rem" }}
               >
                 <div className="flex flex-col items-center gap-4 w-full px-8 text-xl font-medium">
                   {!isBlog ? (
                     <>
-                      <Button onClick={() => { handleWorkScroll(); close(); }} classes={`w-full justify-center py-3 text-center hover:scale-110 ${getActiveClass('work')}`}>Work</Button>
-                      <Button onClick={() => { handleSkillsScroll(); close(); }} classes={`w-full justify-center py-3 text-center hover:scale-110 ${getActiveClass('skills')}`}>Skills</Button>
-                      <Button onClick={() => { handleExperienceScroll(); close(); }} classes={`w-full justify-center py-3 text-center hover:scale-110 ${getActiveClass('experience')}`}>Experience</Button>
-                      <Button onClick={() => { handleVolunteeringScroll(); close(); }} classes={`w-full justify-center py-3 text-center hover:scale-110 ${getActiveClass('volunteering')}`}>Volunteering</Button>
-                      <Button onClick={() => { handleServicesScroll(); close(); }} classes={`w-full justify-center py-3 text-center hover:scale-110 ${getActiveClass('services')}`}>Services</Button>
-                      <Button onClick={() => { handleAboutScroll(); close(); }} classes={`w-full justify-center py-3 text-center hover:scale-110 ${getActiveClass('about')}`}>About</Button>
+                      <Button
+                        onClick={() => {
+                          handleWorkScroll();
+                          close();
+                        }}
+                        classes={`w-full justify-center py-3 text-center hover:scale-110 ${getActiveClass("work")}`}
+                      >
+                        {data.labels?.work?.replace(".", "") || "Work"}
+                      </Button>
+                      <Button
+                        onClick={() => {
+                          handleSkillsScroll();
+                          close();
+                        }}
+                        classes={`w-full justify-center py-3 text-center hover:scale-110 ${getActiveClass("skills")}`}
+                      >
+                        {data.labels?.skills?.replace(".", "") || "Skills"}
+                      </Button>
+                      <Button
+                        onClick={() => {
+                          handleExperienceScroll();
+                          close();
+                        }}
+                        classes={`w-full justify-center py-3 text-center hover:scale-110 ${getActiveClass("experience")}`}
+                      >
+                        {data.labels?.experience?.replace(".", "") ||
+                          "Experience"}
+                      </Button>
+                      <Button
+                        onClick={() => {
+                          handleVolunteeringScroll();
+                          close();
+                        }}
+                        classes={`w-full justify-center py-3 text-center hover:scale-110 ${getActiveClass("volunteering")}`}
+                      >
+                        {data.labels?.volunteering?.replace(".", "") ||
+                          "Volunteering"}
+                      </Button>
+                      <Button
+                        onClick={() => {
+                          handleServicesScroll();
+                          close();
+                        }}
+                        classes={`w-full justify-center py-3 text-center hover:scale-110 ${getActiveClass("services")}`}
+                      >
+                        {data.labels?.services?.replace(".", "") || "Services"}
+                      </Button>
+                      <Button
+                        onClick={() => {
+                          handleAboutScroll();
+                          close();
+                        }}
+                        classes={`w-full justify-center py-3 text-center hover:scale-110 ${getActiveClass("about")}`}
+                      >
+                        {data.labels?.about?.replace(".", "") || "About"}
+                      </Button>
                       {showBlog && (
-                        <Button onClick={() => { router.push("/blog"); close(); }} classes="w-full justify-center py-3 text-center hover:scale-110">Blog</Button>
+                        <Button
+                          onClick={() => {
+                            router.push("/blog");
+                            close();
+                          }}
+                          classes="w-full justify-center py-3 text-center hover:scale-110"
+                        >
+                          {data.labels?.blog || "Blog"}
+                        </Button>
                       )}
                       <Button
                         onClick={() => {
-                          handleContactScroll ? handleContactScroll() : window.scrollTo(0, 0);
+                          handleContactScroll
+                            ? handleContactScroll()
+                            : window.scrollTo(0, 0);
                           close();
                         }}
-                        classes={`w-full justify-center py-3 text-center hover:scale-110 ${getActiveClass('contact')}`}
+                        classes={`w-full justify-center py-3 text-center hover:scale-110 ${getActiveClass("contact")}`}
                       >
-                        Contact
+                        {data.labels?.contact?.replace(".", "") || "Contact"}
                       </Button>
                       <Button
                         type="primary"
-                        onClick={() => { window.open("/Mahmoud_ElTohamy_CV.pdf", "_blank"); close(); }}
+                        onClick={() => {
+                          window.open("/Mahmoud_ElTohamy_CV.pdf", "_blank");
+                          close();
+                        }}
                         classes="w-full justify-center py-4 mt-2 shadow-xl !text-xl"
                       >
-                        Download CV
+                        {data.labels?.downloadCV || "Download CV"}
                       </Button>
                     </>
                   ) : (
                     <>
-                      <Button onClick={() => { router.push("/"); close(); }} classes="w-full justify-center py-3 text-center hover:scale-110">Home</Button>
-                      {showBlog && (
-                        <Button onClick={() => { router.push("/blog"); close(); }} classes="w-full justify-center py-3 text-center hover:scale-110">Blog</Button>
-                      )}
                       <Button
                         onClick={() => {
-                          handleContactScroll ? handleContactScroll() : window.scrollTo(0, 0);
+                          router.push("/");
                           close();
                         }}
                         classes="w-full justify-center py-3 text-center hover:scale-110"
                       >
-                        Contact
+                        {data.labels?.home || "Home"}
+                      </Button>
+                      {showBlog && (
+                        <Button
+                          onClick={() => {
+                            router.push("/blog");
+                            close();
+                          }}
+                          classes="w-full justify-center py-3 text-center hover:scale-110"
+                        >
+                          {data.labels?.blog || "Blog"}
+                        </Button>
+                      )}
+                      <Button
+                        onClick={() => {
+                          handleContactScroll
+                            ? handleContactScroll()
+                            : window.scrollTo(0, 0);
+                          close();
+                        }}
+                        classes="w-full justify-center py-3 text-center hover:scale-110"
+                      >
+                        {data.labels?.contact?.replace(".", "") || "Contact"}
                       </Button>
                       <Button
                         type="primary"
-                        onClick={() => { window.open("/Mahmoud_ElTohamy_CV.pdf", "_blank"); close(); }}
+                        onClick={() => {
+                          window.open("/Mahmoud_ElTohamy_CV.pdf", "_blank");
+                          close();
+                        }}
                         classes="w-full justify-center py-4 mt-2 shadow-xl !text-xl"
                       >
-                        Download CV
+                        {data.labels?.downloadCV || "Download CV"}
                       </Button>
                     </>
                   )}
@@ -165,11 +282,12 @@ const Header = ({
         )}
       </Popover>
 
-      <nav
-        className="hidden flex-row items-center justify-between fixed top-0 left-0 right-0 z-50 px-4 tablet:px-20 py-3 backdrop-blur-lg bg-white/80 dark:bg-black/80 border-b border-gray-200/50 dark:border-gray-800/50 dark:text-white tablet:flex shadow-sm"
-      >
+      <nav className="hidden flex-row items-center justify-between fixed top-0 left-0 right-0 z-50 px-4 tablet:px-20 py-3 backdrop-blur-lg bg-white/80 dark:bg-black/80 border-b border-gray-200/50 dark:border-gray-800/50 dark:text-white tablet:flex shadow-sm">
         <Link href="/">
-          <a aria-label="Home" className="focus:outline-none focus:ring-2 focus:ring-blue-500/50 rounded-lg flex items-center hover:scale-105 transition-transform">
+          <a
+            aria-label="Home"
+            className="focus:outline-none focus:ring-2 focus:ring-blue-500/50 rounded-lg flex items-center hover:scale-105 transition-transform"
+          >
             <img
               src="/images/logo.webp"
               alt={name}
@@ -179,54 +297,142 @@ const Header = ({
         </Link>
         {!isBlog ? (
           <div className="flex items-center gap-1">
-            <Button onClick={handleWorkScroll} classes={getActiveClass('work')}>Work</Button>
-            <Button onClick={handleSkillsScroll} classes={getActiveClass('skills')}>Skills</Button>
-            <Button onClick={handleExperienceScroll} classes={getActiveClass('experience')}>Experience</Button>
-            <Button onClick={handleVolunteeringScroll} classes={getActiveClass('volunteering')}>Volunteering</Button>
-            <Button onClick={handleServicesScroll} classes={getActiveClass('services')}>Services</Button>
-            <Button onClick={handleAboutScroll} classes={getActiveClass('about')}>About</Button>
+            <Button onClick={handleWorkScroll} classes={getActiveClass("work")}>
+              {data.labels?.work?.replace(".", "") || "Work"}
+            </Button>
+            <Button
+              onClick={handleSkillsScroll}
+              classes={getActiveClass("skills")}
+            >
+              {data.labels?.skills?.replace(".", "") || "Skills"}
+            </Button>
+            <Button
+              onClick={handleExperienceScroll}
+              classes={getActiveClass("experience")}
+            >
+              {data.labels?.experience?.replace(".", "") || "Experience"}
+            </Button>
+            <Button
+              onClick={handleVolunteeringScroll}
+              classes={getActiveClass("volunteering")}
+            >
+              {data.labels?.volunteering?.replace(".", "") || "Volunteering"}
+            </Button>
+            <Button
+              onClick={handleServicesScroll}
+              classes={getActiveClass("services")}
+            >
+              {data.labels?.services?.replace(".", "") || "Services"}
+            </Button>
+            <Button
+              onClick={handleAboutScroll}
+              classes={getActiveClass("about")}
+            >
+              {data.labels?.about?.replace(".", "") || "About"}
+            </Button>
             {showBlog && (
-              <Button onClick={() => router.push("/blog")}>Blog</Button>
+              <Button onClick={() => router.push("/blog")}>
+                {data.labels?.blog || "Blog"}
+              </Button>
             )}
-            <Button onClick={handleContactScroll || (() => window.scrollTo(0, 0))} classes={getActiveClass('contact')}>
-              Contact
+            <Button
+              onClick={handleContactScroll || (() => window.scrollTo(0, 0))}
+              classes={getActiveClass("contact")}
+            >
+              {data.labels?.contact?.replace(".", "") || "Contact"}
             </Button>
             <Button
               type="primary"
               onClick={() => window.open("/Mahmoud_ElTohamy_CV.pdf", "_blank")}
-              classes="ml-4"
+              classes="ms-4"
             >
-              Download CV
+              {data.labels?.downloadCV || "Download CV"}
             </Button>
             {data.darkMode && (
-              <Button aria-label="Toggle Dark Mode" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} classes="!p-2 ml-2">
-                <img className="h-5 dark:hidden" src="/images/sun.svg" alt="Sun" />
-                <img className="h-5 hidden dark:block" src="/images/moon.svg" alt="Moon" />
+              <Button
+                aria-label="Toggle Dark Mode"
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                classes="!p-2 ms-2"
+              >
+                <img
+                  className="h-6 dark:hidden"
+                  src="/images/sun.svg"
+                  alt="Sun"
+                />
+                <img
+                  className="h-6 hidden dark:block"
+                  src="/images/moon.svg"
+                  alt="Moon"
+                />
               </Button>
             )}
+            <button
+              aria-label="Switch Language"
+              onClick={() =>
+                router.push(router.pathname, router.asPath, {
+                  locale: router.locale === "en" ? "ar" : "en",
+                })
+              }
+              className="p-2 ms-2 flex items-center gap-1.5 rounded-lg text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-colors font-bold text-sm"
+            >
+              <Globe className="w-4 h-4" />
+              <span className="leading-[0]">
+                {router.locale === "en" ? "AR" : "EN"}
+              </span>
+            </button>
           </div>
         ) : (
           <div className="flex items-center gap-1">
-            <Button onClick={() => router.push("/")}>Home</Button>
+            <Button onClick={() => router.push("/")}>
+              {data.labels?.home || "Home"}
+            </Button>
             {showBlog && (
-              <Button onClick={() => router.push("/blog")}>Blog</Button>
+              <Button onClick={() => router.push("/blog")}>
+                {data.labels?.blog || "Blog"}
+              </Button>
             )}
-            <Button onClick={handleContactScroll || (() => window.scrollTo(0, 0))}>
-              Contact
+            <Button
+              onClick={handleContactScroll || (() => window.scrollTo(0, 0))}
+            >
+              {data.labels?.contact?.replace(".", "") || "Contact"}
             </Button>
             <Button
               type="primary"
               onClick={() => window.open("/Mahmoud_ElTohamy_CV.pdf", "_blank")}
-              classes="ml-4"
+              classes="ms-4"
             >
-              Download CV
+              {data.labels?.downloadCV || "Download CV"}
             </Button>
             {data.darkMode && (
-              <Button aria-label="Toggle Dark Mode" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} classes="!p-2 ml-2">
-                <img className="h-5 dark:hidden" src="/images/sun.svg" alt="Sun" />
-                <img className="h-5 hidden dark:block" src="/images/moon.svg" alt="Moon" />
+              <Button
+                aria-label="Toggle Dark Mode"
+                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                classes="!p-2 ms-2"
+              >
+                <img
+                  className="h-6 dark:hidden"
+                  src="/images/sun.svg"
+                  alt="Sun"
+                />
+                <img
+                  className="h-6 hidden dark:block"
+                  src="/images/moon.svg"
+                  alt="Moon"
+                />
               </Button>
             )}
+            <Button
+              aria-label="Switch Language"
+              onClick={() =>
+                router.push(router.pathname, router.asPath, {
+                  locale: router.locale === "en" ? "ar" : "en",
+                })
+              }
+              classes="!px-4 !py-2 ms-2 flex items-center justify-center gap-2 rounded-full border border-gray-200 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-800/50 hover:bg-[#004aad] hover:text-white dark:hover:bg-[#004aad] dark:hover:text-white hover:border-[#004aad] dark:hover:border-[#004aad] transition-all shadow-sm font-bold text-sm"
+            >
+              <Globe className="w-4 h-4" />
+              <span className="leading-[0]">{router.locale === "en" ? "AR" : "EN"}</span>
+            </Button>
           </div>
         )}
       </nav>

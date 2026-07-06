@@ -1,0 +1,340 @@
+{
+  "name": "محمود التهامي",
+  "headerTaglineOne": "مرحباً 👋",
+  "headerTaglineTwo": "أنا محمود التهامي",
+  "headerTaglineThree": "مطور ويب مقيم في مصر. ",
+  "showCursor": false,
+  "showBlog": false,
+  "darkMode": true,
+  "showResume": false,
+  "socials": [
+    {
+      "id": "1",
+      "title": "Github",
+      "link": "https://github.com/mahmoud-el-tohamy"
+    },
+    {
+      "id": "2",
+      "title": "LinkedIn",
+      "link": "https://linkedin.com/in/mahmoud-el-tohamy"
+    },
+    {
+      "id": "3",
+      "title": "Email",
+      "link": "mailto:mahmoud.eltohamyy@gmail.com"
+    },
+    {
+      "id": "4",
+      "title": "Instagram",
+      "link": "https://www.instagram.com/iammahmoudx"
+    },
+    {
+      "id": "5",
+      "title": "Facebook",
+      "link": "https://www.facebook.com/iammahmoudx"
+    },
+    {
+      "id": "6",
+      "title": "WhatsApp",
+      "link": "https://api.whatsapp.com/send?phone=201553379091"
+    }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "title": "MoneySphere - متتبع التمويل الشخصي",
+      "description": "حصدنا المركز الأول في هاكاثون معهد تكنولوجيا المعلومات (ITI) على مستوى الفرع، من خلال تطوير متتبع للتمويل الشخصي من مجرد فكرة إلى منتج أولي قابل للعمل (MVP) وإطلاقه في أقل من 24 ساعة.",
+      "techStack": [
+        "MERN Stack",
+        "AWS Amplify",
+        "EC2",
+        "RDS (PostgreSQL)"
+      ],
+      "imageSrc": "/images/projects/moneysphare.png",
+      "githubUrl": "https://github.com/iamArsany/MoneySphere",
+      "previewUrl": ""
+    },
+    {
+      "id": "2",
+      "title": "فارما (Pharma) - نظام إدارة العيادات",
+      "description": "تطوير نظام متكامل لإدارة العيادات مع صلاحيات متعددة للمستخدمين، وتنفيذ دورة عمل متكاملة لحجز المواعيد تتضمن طابور انتظار تفاعلي للطبيب ولوحة تحليلات للمسؤول.",
+      "techStack": [
+        "Django",
+        "Django REST Framework",
+        "Python"
+      ],
+      "imageSrc": "/images/projects/Pharma.png",
+      "githubUrl": "https://github.com/K-Sultan/Pharma",
+      "previewUrl": ""
+    },
+    {
+      "id": "3",
+      "title": "سونيستا (Sonesta) - نظام إدارة الفنادق",
+      "description": "تنفيذ نظام متكامل لإدارة الفنادق يشمل لوحات تحكم مخصصة لأربعة أدوار مختلفة للمستخدمين، مع توفير مصادقة واجهات برمجة التطبيقات (API) باستخدام Sanctum، ونظام متطور للتحليلات.",
+      "techStack": [
+        "Laravel 13",
+        "Inertia.js",
+        "Vue 3"
+      ],
+      "imageSrc": "/images/projects/sonesta.png",
+      "githubUrl": "https://github.com/ahmedfaheem/Sonesta",
+      "previewUrl": ""
+    },
+    {
+      "id": "4",
+      "title": "متجر Vue 3 - واجهة متجر إلكتروني",
+      "description": "بناء واجهة متجر إلكتروني متجاوبة تعتمد على الإدارة التفاعلية للحالة، مع سلة مشتريات تفاعلية، ونظام رسوم متحركة ثلاثي الأبعاد (3D Animation) نقي باستخدام CSS بمعدل 60 إطاراً في الثانية على بطاقات المنتجات.",
+      "techStack": [
+        "Vue 3",
+        "Vite",
+        "Tailwind CSS"
+      ],
+      "imageSrc": "/images/projects/vue store.png",
+      "githubUrl": "https://github.com/mahmoud-el-tohamy/vue-simple-shop",
+      "previewUrl": "https://vue-simple-shop.vercel.app/"
+    },
+    {
+      "id": "5",
+      "title": "كويزي (Quizzy) - تطبيق ويب لإدارة الاختبارات",
+      "description": "هندسة وتطوير محرك اختبارات يدعم أكثر من 15 سؤالاً في الجلسة الواحدة، مع نظام تقييم آلي من 100 نقطة، وعرض ديناميكي للأسئلة.",
+      "techStack": [
+        "Vanilla JavaScript",
+        "HTML5",
+        "CSS3"
+      ],
+      "imageSrc": "/images/projects/quizzy.png",
+      "githubUrl": "https://github.com/mw205/quizzy",
+      "previewUrl": "https://mw205.github.io/quizzy/"
+    },
+    {
+      "id": "6",
+      "title": "شيفيو (Chefio) - منصة متكاملة لمشاركة الوصفات",
+      "description": "تصميم وتطوير الواجهة الأمامية لمنصة مشاركة وصفات الطبخ، تتميز بخصائص الاستكشاف، والتفاعلات الاجتماعية، ونظام بحث متقدم متعدد الفلاتر.",
+      "techStack": [
+        "Next.js 14",
+        "TypeScript",
+        "Tailwind CSS"
+      ],
+      "imageSrc": "/images/projects/chefio.png",
+      "githubUrl": "https://github.com/mahmoud-el-tohamy/chefio",
+      "previewUrl": "https://chefio-gamma.vercel.app/"
+    }
+  ],
+  "services": [
+    {
+      "id": "1",
+      "title": "تطوير الواجهات الأمامية (Front-End)",
+      "description": "بناء تطبيقات ويب قابلة للتوسع وعالية الأداء باستخدام React.js، و Next.js، و Angular، و Vue.js، مع ضمان تصميم متجاوب يدعم تجربة مستخدم سلسة على جميع الأجهزة.",
+      "icon": "MonitorSmartphone"
+    },
+    {
+      "id": "2",
+      "title": "تطوير الواجهات الخلفية (Back-End)",
+      "description": "تطوير واجهات برمجة تطبيقات (APIs) قوية ومنطق برمجي آمن من جانب الخادم (Server-side) باستخدام Node.js، و Express.js، و PHP، و Laravel، و Django REST Framework.",
+      "icon": "ServerCog"
+    },
+    {
+      "id": "3",
+      "title": "تصميم وإدارة قواعد البيانات",
+      "description": "تصميم وإدارة قواعد البيانات بالاعتماد على MongoDB، و MySQL، و PostgreSQL لضمان كفاءة تخزين البيانات واسترجاعها بأعلى مستويات الأداء والأمان.",
+      "icon": "Database"
+    },
+    {
+      "id": "4",
+      "title": "التدريب والتوجيه التقني",
+      "description": "تقديم دورات تدريبية متخصصة في البرمجة وتطوير الواجهات الأمامية، وتوجيه الطلاب وإرشادهم، وتدريس أساسيات هندسة وتطوير الويب بخبرة عملية.",
+      "icon": "GraduationCap"
+    }
+  ],
+  "aboutpara": "مطور ويب شامل أمتلك خبرة عملية في بناء تطبيقات ويب قابلة للتوسع وعالية الأداء باستخدام Next.js، و React.js، و TypeScript، و Node.js، و MongoDB. أستكمل حاليًا منحة 9 أشهر في مجال تطوير التطبيقات مفتوحة المصدر من معهد تكنولوجيا المعلومات (ITI)، بعد حصولي على منحة في مسار MEAN Stack من المعهد القومي للاتصالات (NTI). أجمع بين الأسس الهندسية القوية والخبرة العملية في التدريس، حيث قمت بتدريب أكثر من 100 طالب في مجالات البرمجة وتطوير واجهات المستخدم من خلال مبادرات حكومية رائدة.",
+  "resume": {
+    "experiences": [
+      {
+        "id": "1",
+        "dates": "أكتوبر 2025 - الحاضر",
+        "type": "متدرب",
+        "position": "متدرب في برنامج تطوير تطبيقات مفتوحة المصدر - ITI",
+        "bullets": "تنفيذ مشاريع عملية متقدمة باستخدام Node.js، و React.js، و Angular، و Vue.js، و PHP، و Laravel، و Python، و MongoDB، و MySQL، بالإضافة إلى تطبيق منهجيات Agile، و Docker، وتقنيات الذكاء الاصطناعي التوليدي (Generative AI)."
+      },
+      {
+        "id": "2",
+        "dates": "أغسطس 2025 - سبتمبر 2025",
+        "type": "دوام جزئي",
+        "position": "مدرب تطوير الواجهات الأمامية - Intelligo",
+        "bullets": "تقديم دورة تأسيسية مدتها 24 ساعة في تطوير الواجهات الأمامية (Front-End) لأكثر من 10 طلاب جامعيين من خلفيات غير تقنية، وتدريس أساسيات الويب."
+      },
+      {
+        "id": "3",
+        "dates": "يوليو 2025 - أكتوبر 2025",
+        "type": "متدرب",
+        "position": "متدرب في تطوير الويب (MEAN Stack) - NTI",
+        "bullets": "أكثر من 180 ساعة تدريبية مكثفة تغطي MongoDB، و Express.js، و Angular، و Node.js، وبناء واجهات برمجة تطبيقات (REST APIs) متضمنة أنظمة المصادقة والوسائط (Middleware)، بالإضافة إلى تطبيقات Angular."
+      },
+      {
+        "id": "4",
+        "dates": "أغسطس 2024",
+        "type": "دوام جزئي",
+        "position": "مدرب برمجة - DECI",
+        "bullets": "تدريس مجموعتين في معسكر صيفي (أكثر من 60 طالباً إجمالاً) على مدار جلسات تفاعلية استمرت 6 أيام، وتقديم المراحل الخمس للتفكير التصميمي (Design Thinking)."
+      }
+    ],
+    "education": {
+      "universityName": "جامعة مطروح - كلية الحاسبات والذكاء الاصطناعي",
+      "universityDate": "سبتمبر 2021 – يونيو 2025",
+      "universityPara": "درجة البكالوريوس في علوم الحاسب، كلية الحاسبات والذكاء الاصطناعي بتقدير جيد جداً"
+    },
+    "languages": [
+      "JavaScript",
+      "TypeScript",
+      "Python",
+      "C++",
+      "Java"
+    ],
+    "frameworks": [
+      "React.js",
+      "Next.js",
+      "Angular",
+      "Vue.js",
+      "Node.js",
+      "Express.js",
+      "Laravel",
+      "Django"
+    ],
+    "others": [
+      "MongoDB",
+      "MySQL",
+      "PostgreSQL",
+      "Docker",
+      "Git",
+      "GitHub"
+    ]
+  },
+  "labels": {
+    "work": "الأعمال.",
+    "experience": "الخبرات.",
+    "volunteering": "التطوع.",
+    "volunteeringDesc": "القيادة، العمليات، والتأثير المجتمعي عبر المبادرات الوطنية.",
+    "skills": "المهارات.",
+    "services": "الخدمات.",
+    "about": "نبذة عني.",
+    "contact": "تواصل معي.",
+    "letsWork": "دعنا نعمل",
+    "together": "سوياً",
+    "sendMessage": "إرسال رسالة",
+    "downloadCV": "تحميل السيرة الذاتية",
+    "home": "الرئيسية",
+    "blog": "المدونة",
+    "showLess": "عرض أقل",
+    "more": "المزيد",
+    "aboutPara1Highlight": "مطور ويب شامل",
+    "aboutPara1": "أمتلك خبرة عملية في بناء تطبيقات ويب قابلة للتوسع وعالية الأداء.",
+    "aboutPara2Start": "أستكمل حالياً",
+    "aboutPara2Highlight": "برنامج تطوير التطبيقات مفتوحة المصدر (Intake 46) لمدة 9 أشهر من معهد ITI",
+    "aboutPara2End": "بعد حصولي على منحة في مسار MEAN Stack من NTI.",
+    "aboutPara3Start": "أجمع بين الأسس الهندسية القوية والخبرة العملية في التدريس، حيث قمت بتدريب",
+    "aboutPara3Highlight": "أكثر من 100 طالب",
+    "aboutPara3End": "في مجالات البرمجة وتطوير واجهات المستخدم من خلال مبادرات حكومية.",
+    "badge1": "خريج علوم حاسب 25",
+    "badge2": "فائز في هاكاثون",
+    "badge3": "درب أكثر من 100 طالب",
+    "contactName": "الاسم",
+    "contactNamePlaceholder": "أحمد محمد",
+    "contactEmail": "البريد الإلكتروني",
+    "contactEmailPlaceholder": "ahmed@example.com",
+    "contactSubject": "الموضوع",
+    "contactSubjectPlaceholder": "كيف يمكنني مساعدتك؟",
+    "contactMessage": "الرسالة",
+    "contactMessagePlaceholder": "أخبرني عن مشروعك...",
+    "contactSending": "جاري الإرسال...",
+    "contactSent": "تم إرسال الرسالة بنجاح!",
+    "contactError": "حدث خطأ - حاول مرة أخرى"
+  },
+  "volunteering": [
+    {
+      "id": "yly",
+      "org": "شباب يدير شباب (YLY)",
+      "subtitle": "وزارة الشباب والرياضة، مصر",
+      "period": "أغسطس 2023 – الحاضر",
+      "location": "محافظة مطروح، مصر",
+      "image": "/images/volunteering/yly.jpeg",
+      "color": "from-[#004aad] to-blue-400",
+      "accentColor": "blue",
+      "finalRole": "نائب قائد الفريق",
+      "highlights": [
+        "المركز الأول كأفضل عضو عمليات على مستوى الجمهورية لمدة 12 شهراً متتالياً (الموسم الخامس بأكمله).",
+        "المركز الأول كمسؤول عمليات في مصر.",
+        "قيادة فعالية التصوير 'Flash' بكامل السعة الاستيعابية.",
+        "تنظيم مبادرة 'مستقبلنا 12' بمشاركة حوالي 200 متطوع وأكثر من 300 طفل.",
+        "اختيار من قبل المحافظ لقيادة احتفالية العيد القومي.",
+        "تنسيق زيارة وزير الشباب والرياضة عبر عدة مواقع.",
+        "الحصول على درع التميز الوزاري مرتين من وزير الشباب والرياضة د. أشرف صبحي (فبراير ويونيو 2025)."
+      ],
+      "journey": [
+        {
+          "date": "أغسطس 2023",
+          "role": "عضو لجنة العمليات"
+        },
+        {
+          "date": "يونيو 2024",
+          "role": "نائب مسؤول العمليات"
+        },
+        {
+          "date": "ديسمبر 2024",
+          "role": "مسؤول العمليات"
+        },
+        {
+          "date": "يناير 2025",
+          "role": "نائب قائد الفريق"
+        }
+      ]
+    },
+    {
+      "id": "creativa",
+      "org": "مركز إبداع مصر الرقمية (Creativa) بالمنصورة",
+      "subtitle": "وزارة الاتصالات وتكنولوجيا المعلومات",
+      "period": "يوليو 2025 – الحاضر",
+      "location": "المنصورة، مصر",
+      "image": "/images/volunteering/creativa.jpeg",
+      "color": "from-violet-600 to-fuchsia-500",
+      "accentColor": "purple",
+      "finalRole": "متطوع",
+      "highlights": [
+        "دعم الفعاليات التكنولوجية والبرامج التدريبية الخاصة بهيئة تنمية صناعة تكنولوجيا المعلومات (ITIDA).",
+        "الإعداد التقني، وإدارة التسجيل وحضور الفعاليات.",
+        "التصوير الفوتوغرافي وتصوير وتحرير الفيديو للفعاليات.",
+        "المنظم الرئيسي والمصور الرسمي (الزيارة الوزارية) — تنظيم وتوثيق زيارة معالي وزير الاتصالات د. عمرو طلعت لمركز إبداع المنصورة.",
+        "تنظيم محادثات الخبراء 'TICnovation' بالتعاون مع VOIS (الأمن السيبراني و DevSecOps).",
+        "المساعدة في تأسيس وتحديد هيكل فريق التطوع."
+      ],
+      "journey": [
+        {
+          "date": "يوليو 2025",
+          "role": "متطوع"
+        }
+      ]
+    },
+    {
+      "id": "gdg",
+      "org": "مجموعة مطوري جوجل (GDG) الدلتا",
+      "subtitle": "مجتمع مطوري جوجل بالدلتا",
+      "period": "سبتمبر 2025 – الحاضر",
+      "location": "المنصورة، مصر",
+      "image": "/images/volunteering/gdg.jpeg",
+      "color": "from-emerald-500 to-cyan-500",
+      "accentColor": "green",
+      "finalRole": "عضو لوجستيات وتقنيات",
+      "highlights": [
+        "تنظيم الفعاليات المجتمعية بدءاً من ورش العمل إلى المؤتمرات الكبرى (مثل DevFest).",
+        "تهيئة وصيانة أنظمة الصوتيات والمرئيات والشبكات وشاشات العرض التقنية.",
+        "توفير الدعم التقني في الموقع للمتحدثين والحضور.",
+        "إدارة وتوزيع موارد الفعالية والمواد المطبوعة."
+      ],
+      "journey": [
+        {
+          "date": "سبتمبر 2025",
+          "role": "عضو لوجستيات وتقنيات"
+        }
+      ]
+    }
+  ]
+}

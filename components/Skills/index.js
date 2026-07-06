@@ -1,5 +1,4 @@
 import React from "react";
-import data from "../../data/portfolio.json";
 import { Code2 } from "lucide-react";
 
 const SkillBadge = ({ title }) => (
@@ -8,7 +7,7 @@ const SkillBadge = ({ title }) => (
   </div>
 );
 
-const Skills = () => {
+const Skills = ({ data }) => {
   const { resume } = data;
   
   if (!resume) return null;
@@ -17,7 +16,7 @@ const Skills = () => {
     <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">
       <h1 className="text-2xl text-bold flex items-center gap-2">
         <Code2 className="w-6 h-6 text-[#004aad] dark:text-blue-400" />
-        Skills.
+        {data.labels?.skills || "Skills."}
       </h1>
       
       <div className="mt-5 laptop:mt-10 flex flex-col gap-8">

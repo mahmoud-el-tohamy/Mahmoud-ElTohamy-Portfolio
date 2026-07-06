@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const ContactForm = () => {
+const ContactForm = ({ labels }) => {
   const [status, setStatus] = useState('idle'); // idle, submitting, success, error
   const [formData, setFormData] = useState({
     name: '',
@@ -58,7 +58,7 @@ const ContactForm = () => {
         
         <div className="flex flex-col tablet:flex-row gap-6">
           <div className="flex-1 flex flex-col gap-2">
-            <label htmlFor="name" className="text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
+            <label htmlFor="name" className="text-sm font-medium text-gray-700 dark:text-gray-300">{labels?.contactName || "Name"}</label>
             <input 
               type="text" 
               id="name" 
@@ -68,11 +68,11 @@ const ContactForm = () => {
               autoComplete="name"
               required
               className="px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#004aad] dark:focus:ring-white transition-all text-gray-900 dark:text-white"
-              placeholder="John Doe"
+              placeholder={labels?.contactNamePlaceholder || "John Doe"}
             />
           </div>
           <div className="flex-1 flex flex-col gap-2">
-            <label htmlFor="email" className="text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
+            <label htmlFor="email" className="text-sm font-medium text-gray-700 dark:text-gray-300">{labels?.contactEmail || "Email"}</label>
             <input 
               type="email" 
               id="email" 
@@ -82,13 +82,13 @@ const ContactForm = () => {
               autoComplete="email"
               required
               className="px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#004aad] dark:focus:ring-white transition-all text-gray-900 dark:text-white"
-              placeholder="john@example.com"
+              placeholder={labels?.contactEmailPlaceholder || "john@example.com"}
             />
           </div>
         </div>
 
         <div className="flex flex-col gap-2">
-          <label htmlFor="subject" className="text-sm font-medium text-gray-700 dark:text-gray-300">Subject</label>
+          <label htmlFor="subject" className="text-sm font-medium text-gray-700 dark:text-gray-300">{labels?.contactSubject || "Subject"}</label>
           <input 
             type="text" 
             id="subject" 
@@ -97,12 +97,12 @@ const ContactForm = () => {
             onChange={handleChange}
             required
             className="px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#004aad] dark:focus:ring-white transition-all text-gray-900 dark:text-white"
-            placeholder="How can I help you?"
+            placeholder={labels?.contactSubjectPlaceholder || "How can I help you?"}
           />
         </div>
 
         <div className="flex flex-col gap-2">
-          <label htmlFor="message" className="text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
+          <label htmlFor="message" className="text-sm font-medium text-gray-700 dark:text-gray-300">{labels?.contactMessage || "Message"}</label>
           <textarea 
             id="message" 
             name="message" 
@@ -111,7 +111,7 @@ const ContactForm = () => {
             required
             rows="5"
             className="px-4 py-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#004aad] dark:focus:ring-white transition-all resize-none text-gray-900 dark:text-white"
-            placeholder="Tell me about your project..."
+            placeholder={labels?.contactMessagePlaceholder || "Tell me about your project..."}
           ></textarea>
         </div>
 
@@ -124,18 +124,18 @@ const ContactForm = () => {
               'bg-[#004aad] hover:bg-blue-700 dark:bg-white dark:text-black dark:hover:bg-gray-200'}
             disabled:opacity-70 disabled:cursor-not-allowed`}
         >
-          {status === 'idle' && "Send Message"}
+          {status === 'idle' && (labels?.sendMessage || "Send Message")}
           {status === 'submitting' && (
             <>
               <svg className="animate-spin -ml-1 mr-2 h-5 w-5 text-white dark:text-black" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
               </svg>
-              Sending...
+              {labels?.contactSending || "Sending..."}
             </>
           )}
-          {status === 'success' && "Message Sent!"}
-          {status === 'error' && "Error - Try Again"}
+          {status === 'success' && (labels?.contactSent || "Message Sent!")}
+          {status === 'error' && (labels?.contactError || "Error - Try Again")}
         </button>
         
         {/* Helper text for when the user hasn't set the API key yet */}

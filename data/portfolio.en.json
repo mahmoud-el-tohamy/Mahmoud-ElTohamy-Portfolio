@@ -1,0 +1,341 @@
+{
+  "name": "Mahmoud El-Tohamy",
+  "headerTaglineOne": "Hello 👋",
+  "headerTaglineTwo": "I'm Mahmoud El-Tohamy",
+  "headerTaglineThree": "a Full Stack Developer",
+  "headerTaglineFour": "based in Egypt.",
+  "showCursor": false,
+  "showBlog": false,
+  "darkMode": true,
+  "showResume": false,
+  "socials": [
+    {
+      "id": "1",
+      "title": "Github",
+      "link": "https://github.com/mahmoud-el-tohamy"
+    },
+    {
+      "id": "2",
+      "title": "LinkedIn",
+      "link": "https://linkedin.com/in/mahmoud-el-tohamy"
+    },
+    {
+      "id": "3",
+      "title": "Email",
+      "link": "mailto:mahmoud.eltohamyy@gmail.com"
+    },
+    {
+      "id": "4",
+      "title": "Instagram",
+      "link": "https://www.instagram.com/iammahmoudx"
+    },
+    {
+      "id": "5",
+      "title": "Facebook",
+      "link": "https://www.facebook.com/iammahmoudx"
+    },
+    {
+      "id": "6",
+      "title": "WhatsApp",
+      "link": "https://api.whatsapp.com/send?phone=201553379091"
+    }
+  ],
+  "projects": [
+    {
+      "id": "1",
+      "title": "MoneySphere - Personal Finance Tracker",
+      "description": "Won 1st place in the ITI branch-level hackathon by taking a Personal Finance Tracker from idea to a deployed MVP in under 24 hours.",
+      "techStack": [
+        "MERN Stack",
+        "AWS Amplify",
+        "EC2",
+        "RDS (PostgreSQL)"
+      ],
+      "imageSrc": "/images/projects/moneysphare.png",
+      "githubUrl": "https://github.com/iamArsany/MoneySphere",
+      "previewUrl": ""
+    },
+    {
+      "id": "2",
+      "title": "Pharma - Clinic Management System",
+      "description": "Developed a full-stack clinic system with role-based access; implemented an end-to-end appointment workflow with a live doctor queue and admin analytics.",
+      "techStack": [
+        "Django",
+        "Django REST Framework",
+        "Python"
+      ],
+      "imageSrc": "/images/projects/Pharma.png",
+      "githubUrl": "https://github.com/K-Sultan/Pharma",
+      "previewUrl": ""
+    },
+    {
+      "id": "3",
+      "title": "Sonesta - Hotel Management System",
+      "description": "Implemented a full-stack hotel management system with role-based dashboards for 4 user roles, API authentication with Sanctum, and analytics.",
+      "techStack": [
+        "Laravel 13",
+        "Inertia.js",
+        "Vue 3"
+      ],
+      "imageSrc": "/images/projects/sonesta.png",
+      "githubUrl": "https://github.com/ahmedfaheem/Sonesta",
+      "previewUrl": ""
+    },
+    {
+      "id": "4",
+      "title": "Vue 3 Shop - E-Commerce Storefront",
+      "description": "Built a responsive storefront with reactive state management, interactive cart, and a 60fps pure-CSS 3D animation system on product cards.",
+      "techStack": [
+        "Vue 3",
+        "Vite",
+        "Tailwind CSS"
+      ],
+      "imageSrc": "/images/projects/vue store.png",
+      "githubUrl": "https://github.com/mahmoud-el-tohamy/vue-simple-shop",
+      "previewUrl": "https://vue-simple-shop.vercel.app/"
+    },
+    {
+      "id": "5",
+      "title": "Quizzy - Quiz Management Web App",
+      "description": "Engineered a quiz engine supporting 15+ questions per session with automated 100-point scoring and dynamic question rendering.",
+      "techStack": [
+        "Vanilla JavaScript",
+        "HTML5",
+        "CSS3"
+      ],
+      "imageSrc": "/images/projects/quizzy.png",
+      "githubUrl": "https://github.com/mw205/quizzy",
+      "previewUrl": "https://mw205.github.io/quizzy/"
+    },
+    {
+      "id": "6",
+      "title": "Chefio - Full-Stack Recipe Sharing Platform",
+      "description": "Designed and developed the front-end for a recipe sharing platform with discovery, social interactions, and advanced filtered search.",
+      "techStack": [
+        "Next.js 14",
+        "TypeScript",
+        "Tailwind CSS"
+      ],
+      "imageSrc": "/images/projects/chefio.png",
+      "githubUrl": "https://github.com/mahmoud-el-tohamy/chefio",
+      "previewUrl": "https://chefio-gamma.vercel.app/"
+    }
+  ],
+  "services": [
+    {
+      "id": "1",
+      "title": "Front-End Development",
+      "description": "Building scalable, high-performance web applications using React.js, Next.js, Angular, and Vue.js with responsive design.",
+      "icon": "MonitorSmartphone"
+    },
+    {
+      "id": "2",
+      "title": "Back-End Development",
+      "description": "Developing robust APIs and server-side logic using Node.js, Express.js, PHP, Laravel, and Django REST Framework.",
+      "icon": "ServerCog"
+    },
+    {
+      "id": "3",
+      "title": "Database Design & Management",
+      "description": "Designing and managing databases utilizing MongoDB, MySQL, and PostgreSQL for efficient data storage and retrieval.",
+      "icon": "Database"
+    },
+    {
+      "id": "4",
+      "title": "Instructor & Training",
+      "description": "Delivering programming and front-end development courses, mentoring students, and teaching web fundamentals.",
+      "icon": "GraduationCap"
+    }
+  ],
+  "aboutpara": "Full Stack Developer with hands-on experience building scalable, high-performance web applications using Next.js, React.js, TypeScript, Node.js, and MongoDB. Currently completing the ITI 9-Month Open Source Program following an NTI MEAN Stack government scholarship. Combines solid engineering fundamentals with real-world teaching experience, having trained 100+ students in Programming and Front-End Development through government-backed initiatives.",
+  "resume": {
+    "experiences": [
+      {
+        "id": "1",
+        "dates": "Oct 2025 - Present",
+        "type": "Trainee",
+        "position": "Open Source App Dev Trainee at ITI",
+        "bullets": "Hands-on projects across Node.js, React.js, Angular, Vue.js, PHP, Laravel, Python, MongoDB, and MySQL, Agile, Docker, and Generative AI practices."
+      },
+      {
+        "id": "2",
+        "dates": "Aug 2025 - Sep 2025",
+        "type": "Part Time",
+        "position": "Front-End Development Instructor at Intelligo",
+        "bullets": "Delivered a 24-hour foundational Front-End Development course to 10+ university students from non-technical backgrounds, Taught web fundamentals."
+      },
+      {
+        "id": "3",
+        "dates": "Jul 2025 - Oct 2025",
+        "type": "Trainee",
+        "position": "MEAN Stack Web Dev Trainee at NTI",
+        "bullets": "180+ hours covering MongoDB, Express.js, Angular, and Node.js, Built REST APIs with authentication and middleware, and Angular applications."
+      },
+      {
+        "id": "4",
+        "dates": "Aug 2024",
+        "type": "Part Time",
+        "position": "Programming Instructor at DECI",
+        "bullets": "Taught two summer camp groups (60+ students total) over 6-day immersive sessions, Delivered the 5 Stages of Design Thinking."
+      }
+    ],
+    "education": {
+      "universityName": "Matrouh University",
+      "universityDate": "Sep 2021 – Jun 2025",
+      "universityPara": "Bachelor’s Degree in Computer Science, Faculty of Computers and Artificial Intelligence"
+    },
+    "languages": [
+      "JavaScript",
+      "TypeScript",
+      "Python",
+      "C++",
+      "Java"
+    ],
+    "frameworks": [
+      "React.js",
+      "Next.js",
+      "Angular",
+      "Vue.js",
+      "Node.js",
+      "Express.js",
+      "Laravel",
+      "Django"
+    ],
+    "others": [
+      "MongoDB",
+      "MySQL",
+      "PostgreSQL",
+      "Docker",
+      "Git",
+      "GitHub"
+    ]
+  },
+  "labels": {
+    "work": "Work.",
+    "experience": "Experience.",
+    "volunteering": "Volunteering.",
+    "volunteeringDesc": "Leadership, operations, and community impact across national initiatives.",
+    "skills": "Skills.",
+    "services": "Services.",
+    "about": "About.",
+    "contact": "Contact.",
+    "letsWork": "LET'S WORK",
+    "together": "TOGETHER",
+    "sendMessage": "Send Message",
+    "downloadCV": "Download CV",
+    "home": "Home",
+    "blog": "Blog",
+    "showLess": "Show less",
+    "more": "more",
+    "aboutPara1Highlight": "Full Stack Developer",
+    "aboutPara1": "with hands-on experience building scalable, high-performance web applications.",
+    "aboutPara2Start": "Currently completing the",
+    "aboutPara2Highlight": "ITI 9-Month Open Source Program",
+    "aboutPara2End": "following an NTI MEAN Stack government scholarship.",
+    "aboutPara3Start": "Combines solid engineering fundamentals with real-world teaching experience, having trained",
+    "aboutPara3Highlight": "100+ students",
+    "aboutPara3End": "in Programming and Front-End Development through government-backed initiatives.",
+    "badge1": "CS Graduate '25",
+    "badge2": "Hackathon Winner",
+    "badge3": "Mentored 100+ Students",
+    "contactName": "Name",
+    "contactNamePlaceholder": "John Doe",
+    "contactEmail": "Email",
+    "contactEmailPlaceholder": "john@example.com",
+    "contactSubject": "Subject",
+    "contactSubjectPlaceholder": "How can I help you?",
+    "contactMessage": "Message",
+    "contactMessagePlaceholder": "Tell me about your project...",
+    "contactSending": "Sending...",
+    "contactSent": "Message Sent!",
+    "contactError": "Error - Try Again"
+  },
+  "volunteering": [
+    {
+      "id": "yly",
+      "org": "Youth Leading Youth (YLY)",
+      "subtitle": "Ministry of Youth and Sports, Egypt",
+      "period": "Aug 2023 – Present",
+      "location": "Matrouh Governorate, Egypt",
+      "image": "/images/volunteering/yly.jpeg",
+      "color": "from-[#004aad] to-blue-400",
+      "accentColor": "blue",
+      "finalRole": "Vice Team Leader",
+      "highlights": [
+        "#1 Operations Member Nationwide — Consistently achieved the top rank for 12 consecutive months (Entire Season 5).",
+        "#1 Head of Operations in Egypt",
+        "Led 'Flash' photography event to maximum capacity",
+        "Organized Mustaqbalna 12 with ~200 volunteers & 300+ children",
+        "Selected by Governor to lead National Day Celebration",
+        "Coordinated Minister of Youth visit across multiple venues",
+        "Received 2× Ministerial Shield of Excellence from the Minister of Youth and Sports Dr. Ashraf Sobhy (Feb & Jun 2025)"
+      ],
+      "journey": [
+        {
+          "date": "Aug 2023",
+          "role": "OR Committee Member"
+        },
+        {
+          "date": "Jun 2024",
+          "role": "Vice Head of Operations"
+        },
+        {
+          "date": "Dec 2024",
+          "role": "Head of Operations"
+        },
+        {
+          "date": "Jan 2025",
+          "role": "Vice Team Leader"
+        }
+      ]
+    },
+    {
+      "id": "creativa",
+      "org": "Creativa Innovation Hub Mansoura",
+      "subtitle": "Ministry of Communications & IT",
+      "period": "Jul 2025 – Present",
+      "location": "Mansoura, Egypt",
+      "image": "/images/volunteering/creativa.jpeg",
+      "color": "from-violet-600 to-fuchsia-500",
+      "accentColor": "purple",
+      "finalRole": "Volunteer",
+      "highlights": [
+        "Supported technology events & training programs (ITIDA)",
+        "Technical setup, registration & attendance management",
+        "Photography, videography & video editing for events",
+        "Lead Organizer & Official Photographer (Ministerial Visit) — Organized & documented the visit of H.E. Amr Talaat, Minister of Communications, to Creativa Mansoura.",
+        "Organized TICnovation Expert Talks with VOIS (Cyber Security, DevSecOps)",
+        "Helped establish & define the volunteer team structure"
+      ],
+      "journey": [
+        {
+          "date": "Jul 2025",
+          "role": "Volunteer"
+        }
+      ]
+    },
+    {
+      "id": "gdg",
+      "org": "Google Developers Group Delta",
+      "subtitle": "GDG Delta Community",
+      "period": "Sep 2025 – Present",
+      "location": "Mansoura, Egypt",
+      "image": "/images/volunteering/gdg.jpeg",
+      "color": "from-emerald-500 to-cyan-500",
+      "accentColor": "green",
+      "finalRole": "Logistics & Technical Member",
+      "highlights": [
+        "Organized community events — workshops to major conferences (DevFest)",
+        "Configured & maintained AV systems, networking & technical displays",
+        "On-site technical support for speakers and attendees",
+        "Managed distribution of event resources & printed materials"
+      ],
+      "journey": [
+        {
+          "date": "Sep 2025",
+          "role": "Logistics & Technical Member"
+        }
+      ]
+    }
+  ]
+}

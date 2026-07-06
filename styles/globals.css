@@ -4,7 +4,11 @@
 @import "./markdown.css";
 
 * {
-  font-family: "Hind";
+  font-family: "Hind", sans-serif;
+}
+
+html[dir="rtl"] * {
+  font-family: "Cairo", sans-serif;
 }
 
 html, body {
@@ -83,6 +87,15 @@ body {
   left: 0;
   background: inherit;
   border-radius: inherit;
+}
+
+/* Utility to hide scrollbar */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 /* Custom Scrollbar */

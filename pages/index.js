@@ -1,4 +1,5 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
+
 import Header from "../components/Header";
 import dynamic from "next/dynamic";
 import Socials from "../components/Socials";
@@ -21,10 +22,23 @@ import BackToTop from "../components/BackToTop";
 import { GraduationCap, Trophy, Users, Briefcase, Wrench, User } from "lucide-react";
 import Image from "next/image";
 
-// Local Data
-import data from "../data/portfolio.json";
+export async function getStaticProps({ locale }) {
+  const data = require(`../data/portfolio.${locale}.json`);
+  return {
+    props: {
+      data,
+      locale
+    }
+  }
+}
 
-export default function Home() {
+export default function Home({ data, locale }) {
+  
+  useEffect(() => {
+    document.documentElement.dir = locale === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = locale;
+  }, [locale]);
+
   // Ref
   const workRef = useRef();
   const aboutRef = useRef();
@@ -93,7 +107,10 @@ export default function Home() {
   return (
     <div className="relative">
       <Head>
-        <title>{data.name} (محمود إسلام التهامي) | Full Stack Developer</title>
+        <title>{locale === 'ar' ? "محمود إسلام التهامي | مطور ويب شامل" : `${data.name} | Full Stack Developer`}</title>
+        <link rel="alternate" href="https://mahmoud-el-tohamy-portfolio.vercel.app/" hrefLang="x-default" />
+        <link rel="alternate" href="https://mahmoud-el-tohamy-portfolio.vercel.app/" hrefLang="en" />
+        <link rel="alternate" href="https://mahmoud-el-tohamy-portfolio.vercel.app/ar" hrefLang="ar" />
         <meta
           name="description"
           content="Portfolio of Mahmoud El-Tohamy, a Full Stack Developer from Mansoura specializing in React, Next.js, Node.js, and MongoDB."
@@ -210,6 +227,7 @@ export default function Home() {
 
       <main className="container mx-auto mb-10 pt-24 px-4 sm:px-6">
         <Header
+          data={data}
           handleWorkScroll={handleWorkScroll}
           handleSkillsScroll={handleSkillsScroll}
           handleExperienceScroll={handleExperienceScroll}
@@ -237,15 +255,12 @@ export default function Home() {
                 </h2>
               </StaggerItem>
               <StaggerItem>
-                <p className="text-2xl tablet:text-4xl laptop:text-4xl laptopl:text-6xl p-1 tablet:p-2 text-bold w-full text-gray-500 dark:text-gray-400">
+                <h1 className="text-3xl tablet:text-5xl laptop:text-5xl laptopl:text-7xl p-1 tablet:p-2 text-bold w-full">
                   {data.headerTaglineFour}
-                </p>
+                </h1>
               </StaggerItem>
+              <Socials data={data} className="mt-2 laptop:mt-5" />
             </StaggerContainer>
-
-            <FadeUp delay={0.8}>
-              <Socials className="mt-2 laptop:mt-5" />
-            </FadeUp>
           </div>
 
           <FadeUp
@@ -280,7 +295,7 @@ export default function Home() {
           <FadeUp>
             <h1 className="text-2xl text-bold flex items-center gap-2">
               <Briefcase className="w-6 h-6 text-[#004aad] dark:text-blue-400" />
-              Work.
+              {data.labels.work}
             </h1>
           </FadeUp>
 
@@ -300,20 +315,21 @@ export default function Home() {
           </StaggerContainer>
         </section>
 
-        <section id="skills" ref={skillsRef}>
-          <FadeUp>
-            <Skills />
-          </FadeUp>
-        </section>
         <section id="experience" ref={experienceRef}>
           <FadeUp>
-            <Experience />
+            <Experience data={data} />
           </FadeUp>
         </section>
 
         <section id="volunteering" ref={volunteeringRef}>
           <FadeUp>
-            <Volunteering />
+            <Volunteering data={data} />
+          </FadeUp>
+        </section>
+
+        <section id="skills" ref={skillsRef}>
+          <FadeUp>
+            <Skills data={data} />
           </FadeUp>
         </section>
 
@@ -325,7 +341,7 @@ export default function Home() {
           <FadeUp>
             <h1 className="text-2xl text-bold flex items-center gap-2">
               <Wrench className="w-6 h-6 text-[#004aad] dark:text-blue-400" />
-              Services.
+              {data.labels.services}
             </h1>
           </FadeUp>
           <StaggerContainer className="mt-5 grid grid-cols-1 laptop:grid-cols-2 gap-6">
@@ -349,7 +365,7 @@ export default function Home() {
           <FadeUp>
             <h1 className="tablet:m-10 text-2xl text-bold flex items-center gap-2">
               <User className="w-6 h-6 text-[#004aad] dark:text-blue-400" />
-              About.
+              {data.labels.about}
             </h1>
           </FadeUp>
           <div className="tablet:m-10 mt-5 flex flex-col laptop:flex-row items-center justify-between gap-20">
@@ -357,44 +373,41 @@ export default function Home() {
               <div className="flex flex-col gap-6 text-black/80 dark:text-gray-300">
                 <p className="text-xl tablet:text-2xl laptop:text-3xl font-medium leading-relaxed">
                   <span className="font-bold text-[#004aad] dark:text-blue-400">
-                    Full Stack Developer
+                    {data.labels.aboutPara1Highlight}
                   </span>{" "}
-                  with hands-on experience building scalable, high-performance
-                  web applications.
+                  {data.labels.aboutPara1}
                 </p>
                 <p className="text-lg tablet:text-xl laptop:text-2xl leading-relaxed opacity-90">
-                  Currently completing the{" "}
+                  {data.labels.aboutPara2Start}{" "}
                   <span className="font-bold text-[#004aad] dark:text-blue-400">
-                    ITI 9-Month Open Source Program
+                    {data.labels.aboutPara2Highlight}
                   </span>{" "}
-                  following an NTI MEAN Stack government scholarship.
+                  {data.labels.aboutPara2End}
                 </p>
                 <p className="text-lg tablet:text-xl laptop:text-2xl leading-relaxed opacity-90">
-                  Combines solid engineering fundamentals with real-world
-                  teaching experience, having trained{" "}
+                  {data.labels.aboutPara3Start}{" "}
                   <span className="font-bold text-[#004aad] dark:text-blue-400">
-                    100+ students
+                    {data.labels.aboutPara3Highlight}
                   </span>{" "}
-                  in Programming and Front-End Development through
-                  government-backed initiatives.
+                  {data.labels.aboutPara3End}
                 </p>
 
                 <div className="mt-4 flex flex-wrap gap-3">
                   {[
                     {
-                      text: "CS Graduate '25",
+                      text: data.labels.badge1,
                       icon: <GraduationCap className="w-4 h-4" />,
                       color:
                         "bg-blue-500/10 text-blue-600 dark:text-blue-300 border-blue-500/20",
                     },
                     {
-                      text: "Hackathon Winner",
+                      text: data.labels.badge2,
                       icon: <Trophy className="w-4 h-4" />,
                       color:
                         "bg-yellow-500/10 text-yellow-600 dark:text-yellow-300 border-yellow-500/20",
                     },
                     {
-                      text: "Mentored 100+ Students",
+                      text: data.labels.badge3,
                       icon: <Users className="w-4 h-4" />,
                       color:
                         "bg-green-500/10 text-green-600 dark:text-green-300 border-green-500/20",
@@ -427,7 +440,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <Footer contactRef={contactRef} />
+        <Footer data={data} contactRef={contactRef} />
       </main>
       <BackToTop />
     </div>

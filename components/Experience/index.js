@@ -1,5 +1,4 @@
 import React from "react";
-import data from "../../data/portfolio.json";
 import { Layers } from "lucide-react";
 
 const TimelineItem = ({
@@ -12,9 +11,9 @@ const TimelineItem = ({
 }) => (
   <div className="relative py-6 group">
     {/* Timeline Line */}
-    <div className="hidden tablet:block absolute left-[150px] top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-800"></div>
+    <div className="hidden tablet:block absolute left-[150px] rtl:left-auto rtl:right-[150px] top-0 bottom-0 w-0.5 bg-gray-200 dark:bg-gray-800"></div>
     {/* Timeline Dot */}
-    <div className="hidden tablet:block absolute left-[143px] top-8 w-4 h-4 rounded-full border-2 border-white dark:border-black bg-[#004aad] dark:bg-white shadow-sm z-10"></div>
+    <div className="hidden tablet:block absolute left-[143px] rtl:left-auto rtl:right-[143px] top-8 w-4 h-4 rounded-full border-2 border-white dark:border-black bg-[#004aad] dark:bg-white shadow-sm z-10"></div>
 
     <div className="flex flex-col tablet:flex-row gap-4 tablet:gap-8 items-start">
       <div className="tablet:w-[130px] flex-shrink-0 pt-1 ">
@@ -28,7 +27,7 @@ const TimelineItem = ({
         )}
       </div>
 
-      <div className="flex-1 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-800 p-6 rounded-2xl hover:-translate-y-1 transition-transform duration-300 shadow-sm w-full ml-5">
+      <div className="flex-1 bg-white/50 dark:bg-gray-900/50 backdrop-blur-sm border border-gray-200 dark:border-gray-800 p-6 rounded-2xl hover:-translate-y-1 transition-transform duration-300 shadow-sm w-full ml-5 rtl:ml-0 rtl:mr-5">
         <h3 className="text-xl font-bold mb-2">
           {isEducation ? universityName : position}
         </h3>
@@ -42,17 +41,17 @@ const TimelineItem = ({
   </div>
 );
 
-const Experience = () => {
+const Experience = ({ data }) => {
   const { resume } = data;
   
   if (!resume) return null;
 
   return (
     <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">
-      <h1 className="text-2xl text-bold mb-5 laptop:mb-10 flex items-center gap-2">
+      <div className="flex items-center gap-2 mb-8">
         <Layers className="w-6 h-6 text-[#004aad] dark:text-blue-400" />
-        Experience & Education.
-      </h1>
+        <h2 className="text-2xl font-bold text-black dark:text-white">{data.labels?.experience || "Experience & Education."}</h2>
+      </div>
       
       <div className="relative">
         {resume.experiences.map((exp) => (

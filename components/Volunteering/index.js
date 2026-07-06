@@ -4,73 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { ChevronDown, MapPin, Award, CalendarDays } from "lucide-react";
 
-const volunteeringData = [
-  {
-    id: "yly",
-    org: "Youth Leading Youth (YLY)",
-    subtitle: "Ministry of Youth and Sports, Egypt",
-    period: "Aug 2023 – Present",
-    location: "Matrouh Governorate, Egypt",
-    image: "/images/volunteering/yly.jpeg",
-    color: "from-[#004aad] to-blue-400",
-    accentColor: "blue",
-    finalRole: "Vice Team Leader",
-    highlights: [
-      "#1 Operations Member Nationwide — Consistently achieved the top rank for 12 consecutive months (Entire Season 5).",
-      "#1 Head of Operations in Egypt",
-      "Led 'Flash' photography event to maximum capacity",
-      "Organized Mustaqbalna 12 with ~200 volunteers & 300+ children",
-      "Selected by Governor to lead National Day Celebration",
-      "Coordinated Minister of Youth visit across multiple venues",
-      "Received 2× Ministerial Shield of Excellence from the Minister of Youth and Sports Dr. Ashraf Sobhy (Feb & Jun 2025)",
-    ],
-    journey: [
-      { date: "Aug 2023", role: "OR Committee Member" },
-      { date: "Jun 2024", role: "Vice Head of Operations" },
-      { date: "Dec 2024", role: "Head of Operations" },
-      { date: "Jan 2025", role: "Vice Team Leader" },
-    ],
-  },
-  {
-    id: "creativa",
-    org: "Creativa Innovation Hub Mansoura",
-    subtitle: "Ministry of Communications & IT",
-    period: "Jul 2025 – Present",
-    location: "Mansoura, Egypt",
-    image: "/images/volunteering/creativa.jpeg",
-    color: "from-violet-600 to-fuchsia-500",
-    accentColor: "purple",
-    finalRole: "Volunteer",
-    highlights: [
-      "Supported technology events & training programs (ITIDA)",
-      "Technical setup, registration & attendance management",
-      "Photography, videography & video editing for events",
-      "Lead Organizer & Official Photographer (Ministerial Visit) — Organized & documented the visit of H.E. Amr Talaat, Minister of Communications, to Creativa Mansoura.",
-      "Organized TICnovation Expert Talks with VOIS (Cyber Security, DevSecOps)",
-      "Helped establish & define the volunteer team structure",
-    ],
-    journey: [{ date: "Jul 2025", role: "Volunteer" }],
-  },
-  {
-    id: "gdg",
-    org: "Google Developers Group Delta",
-    subtitle: "GDG Delta Community",
-    period: "Sep 2025 – Present",
-    location: "Mansoura, Egypt",
-    image: "/images/volunteering/gdg.jpeg",
-    color: "from-emerald-500 to-cyan-500",
-    accentColor: "green",
-    finalRole: "Logistics & Technical Member",
-    highlights: [
-      "Organized community events — workshops to major conferences (DevFest)",
-      "Configured & maintained AV systems, networking & technical displays",
-      "On-site technical support for speakers and attendees",
-      "Managed distribution of event resources & printed materials",
-    ],
-    journey: [{ date: "Sep 2025", role: "Logistics & Technical Member" }],
-  },
-];
-
 const accentClasses = {
   blue: {
     badge: "bg-blue-500/10 text-blue-600 dark:text-blue-300 border-blue-500/20",
@@ -94,7 +27,7 @@ const accentClasses = {
   },
 };
 
-const VolunteeringCard = ({ item, index }) => {
+const VolunteeringCard = ({ item, index, labels }) => {
   const [expanded, setExpanded] = useState(false);
   const [imgError, setImgError] = useState(false);
   const accent = accentClasses[item.accentColor];
@@ -195,7 +128,7 @@ const VolunteeringCard = ({ item, index }) => {
                 ))}
               </div>
               {/* Desktop: horizontal timeline */}
-              <div className="hidden laptop:flex items-start gap-0 overflow-x-auto">
+              <div className="hidden laptop:flex items-start gap-0 overflow-x-auto hide-scrollbar">
                 {item.journey.map((step, i) => (
                   <React.Fragment key={i}>
                     <div className="flex flex-col items-center gap-0.5 min-w-[90px]">
@@ -260,9 +193,9 @@ const VolunteeringCard = ({ item, index }) => {
 
               <button
                 onClick={() => setExpanded(!expanded)}
-                className="self-start flex items-center gap-1.5 text-xs font-semibold text-[#004aad] dark:text-blue-400 hover:opacity-70 transition-opacity mt-auto"
+                className="self-start mt-auto flex items-center gap-1.5 text-sm font-bold text-[#004aad] dark:text-blue-400 hover:opacity-70 transition-opacity"
               >
-                {expanded ? "Show less" : `+${item.highlights.length - 3} more`}
+                {expanded ? labels.showLess : `+${item.highlights.length - 3} ${labels.more}`}
                 <motion.span
                   animate={{ rotate: expanded ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
@@ -278,7 +211,7 @@ const VolunteeringCard = ({ item, index }) => {
   );
 };
 
-const Volunteering = () => {
+const Volunteering = ({ data }) => {
   return (
     <div className="mt-10 laptop:mt-30 p-2 laptop:p-0">
       {/* Header */}
@@ -291,18 +224,17 @@ const Volunteering = () => {
       >
         <div className="flex items-center gap-3">
           <Award className="w-6 h-6 text-[#004aad] dark:text-blue-400" />
-          <h1 className="text-2xl text-bold">Volunteering.</h1>
+          <h1 className="text-2xl text-bold">{data.labels.volunteering}</h1>
         </div>
         <p className="text-gray-500 dark:text-gray-400 text-sm max-w-lg">
-          Leadership, operations, and community impact across national
-          initiatives.
+          {data.labels.volunteeringDesc}
         </p>
       </motion.div>
 
       {/* Cards */}
       <div className="flex flex-col gap-6">
-        {volunteeringData.map((item, index) => (
-          <VolunteeringCard key={item.id} item={item} index={index} />
+        {data.volunteering.map((item, index) => (
+          <VolunteeringCard key={item.id} item={item} index={index} labels={data.labels} />
         ))}
       </div>
     </div>

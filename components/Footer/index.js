@@ -4,7 +4,7 @@ import Link from "next/link";
 import ContactForm from "../ContactForm";
 import { Mail } from "lucide-react";
 
-const Footer = ({ contactRef }) => {
+const Footer = ({ data, contactRef }) => {
   return (
     <>
       <div id="contact" className="mt-5 laptop:mt-40 p-2 laptop:p-0" ref={contactRef}>
@@ -32,23 +32,23 @@ const Footer = ({ contactRef }) => {
             <div className="w-full laptop:w-3/5">
               <h1 className="text-2xl text-bold mb-5 flex items-center gap-2">
                 <Mail className="w-6 h-6 text-[#004aad] dark:text-blue-400" />
-                Contact.
+                {data.labels.contact}
               </h1>
               <h1 className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold">
-                LET&apos;S WORK
+                {data.labels.letsWork}
               </h1>
               <h1 className="text-3xl tablet:text-6xl laptop:text-6xl laptopl:text-8xl text-bold">
-                TOGETHER
+                {data.labels.together}
               </h1>
 
-              <ContactForm />
+              <ContactForm labels={data.labels} />
 
             </div>
           </div>
           
           {/* Centered Socials across full page */}
           <div className="mt-20 w-full flex justify-center pb-10">
-            <Socials className="justify-center" />
+            <Socials data={data} className="justify-center" />
           </div>
         </div>
       </div>
