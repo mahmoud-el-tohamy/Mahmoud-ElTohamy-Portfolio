@@ -96,11 +96,13 @@ const Header = ({
 
                 <button
                   aria-label="Switch Language"
-                  onClick={() =>
+                  onClick={() => {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
                     router.push(router.pathname, router.asPath, {
                       locale: router.locale === "en" ? "ar" : "en",
-                    })
-                  }
+                      scroll: true,
+                    });
+                  }}
                   className="p-2 flex items-center gap-1.5 rounded-lg text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-colors font-bold text-xs"
                 >
                   <Globe className="w-4 h-4" />
@@ -368,11 +370,13 @@ const Header = ({
             )}
             <button
               aria-label="Switch Language"
-              onClick={() =>
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
                 router.push(router.pathname, router.asPath, {
                   locale: router.locale === "en" ? "ar" : "en",
-                })
-              }
+                  scroll: true,
+                });
+              }}
               className="p-2 ms-2 flex items-center gap-1.5 rounded-lg text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-colors font-bold text-sm"
             >
               <Globe className="w-4 h-4" />
@@ -423,11 +427,13 @@ const Header = ({
             )}
             <Button
               aria-label="Switch Language"
-              onClick={() =>
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
                 router.push(router.pathname, router.asPath, {
                   locale: router.locale === "en" ? "ar" : "en",
-                })
-              }
+                  scroll: true,
+                });
+              }}
               classes="!px-4 !py-2 ms-2 flex items-center justify-center gap-2 rounded-full border border-gray-200 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-800/50 hover:bg-[#004aad] hover:text-white dark:hover:bg-[#004aad] dark:hover:text-white hover:border-[#004aad] dark:hover:border-[#004aad] transition-all shadow-sm font-bold text-sm"
             >
               <Globe className="w-4 h-4" />
