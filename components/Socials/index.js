@@ -36,7 +36,7 @@ const Socials = ({ className }) => {
             target={isEmail ? "_self" : "_blank"}
             rel={isEmail ? undefined : "me noopener noreferrer"}
             aria-label={`Visit my ${social.title} profile`}
-            className="text-sm tablet:text-base m-1 laptop:m-2 flex items-center gap-2 transition-all ease-out duration-300 text-black dark:text-white hover:opacity-70 active:scale-100 tablet:first:ml-0 px-4 py-2 bg-gray-100 dark:bg-white/10 rounded-xl hover:bg-gray-200 dark:hover:bg-white/20 border border-transparent dark:border-white/5 link cursor-pointer"
+            className="text-sm tablet:text-base m-1 laptop:m-2 flex items-center gap-2 transition-all ease-out duration-300 text-black dark:text-white hover:opacity-70 active:scale-100 tablet:first:ml-0 px-4 py-2 bg-gray-100 dark:bg-white/10 rounded-xl hover:bg-gray-200 dark:hover:bg-white/20 border border-transparent dark:border-white/5 link cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500/50"
           >
             {getIcon(social.title)}
             {social.title}

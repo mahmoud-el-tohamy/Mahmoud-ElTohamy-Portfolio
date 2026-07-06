@@ -1,6 +1,7 @@
 import { Popover, Transition } from "@headlessui/react";
 import { useTheme } from "next-themes";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import React, { useState, useEffect, Fragment } from "react";
 import Button from "../Button";
 import data from "../../data/portfolio.json";
@@ -54,16 +55,20 @@ const Header = ({
         {({ open, close }) => (
           <>
             <div className="flex items-center justify-between p-2 relative z-50">
-              <img
-                onClick={() => router.push("/")}
-                src="/images/logo.webp"
-                alt={name}
-                className="h-10 cursor-pointer link"
-              />
+              <Link href="/">
+                <a aria-label="Home" className="focus:outline-none focus:ring-2 focus:ring-blue-500/50 rounded-lg flex items-center">
+                  <img
+                    src="/images/logo.webp"
+                    alt={name}
+                    className="h-10 cursor-pointer link"
+                  />
+                </a>
+              </Link>
 
               <div className="flex items-center gap-2">
                 {data.darkMode && (
                   <Button
+                    aria-label="Toggle Dark Mode"
                     onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                     classes="!p-2"
                   >
@@ -72,7 +77,7 @@ const Header = ({
                   </Button>
                 )}
 
-                <Popover.Button className="p-2 outline-none">
+                <Popover.Button aria-label="Toggle Menu" className="p-2 outline-none focus:outline-none focus:ring-2 focus:ring-blue-500/50 rounded-lg">
                   <img
                     className="h-6 dark:hidden transition-transform duration-300"
                     src={`/images/${!open ? "menu.svg" : "cancel.svg"}`}
@@ -163,12 +168,15 @@ const Header = ({
       <nav
         className="hidden flex-row items-center justify-between fixed top-0 left-0 right-0 z-50 px-4 tablet:px-20 py-3 backdrop-blur-lg bg-white/80 dark:bg-black/80 border-b border-gray-200/50 dark:border-gray-800/50 dark:text-white tablet:flex shadow-sm"
       >
-        <img
-          onClick={() => router.push("/")}
-          src="/images/logo.webp"
-          alt={name}
-          className="h-10 laptop:h-14 cursor-pointer hover:scale-105 transition-transform"
-        />
+        <Link href="/">
+          <a aria-label="Home" className="focus:outline-none focus:ring-2 focus:ring-blue-500/50 rounded-lg flex items-center hover:scale-105 transition-transform">
+            <img
+              src="/images/logo.webp"
+              alt={name}
+              className="h-10 laptop:h-14 cursor-pointer"
+            />
+          </a>
+        </Link>
         {!isBlog ? (
           <div className="flex items-center gap-1">
             <Button onClick={handleWorkScroll} classes={getActiveClass('work')}>Work</Button>
@@ -191,7 +199,7 @@ const Header = ({
               Download CV
             </Button>
             {data.darkMode && (
-              <Button onClick={() => setTheme(theme === "dark" ? "light" : "dark")} classes="!p-2 ml-2">
+              <Button aria-label="Toggle Dark Mode" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} classes="!p-2 ml-2">
                 <img className="h-5 dark:hidden" src="/images/sun.svg" alt="Sun" />
                 <img className="h-5 hidden dark:block" src="/images/moon.svg" alt="Moon" />
               </Button>
@@ -214,7 +222,7 @@ const Header = ({
               Download CV
             </Button>
             {data.darkMode && (
-              <Button onClick={() => setTheme(theme === "dark" ? "light" : "dark")} classes="!p-2 ml-2">
+              <Button aria-label="Toggle Dark Mode" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} classes="!p-2 ml-2">
                 <img className="h-5 dark:hidden" src="/images/sun.svg" alt="Sun" />
                 <img className="h-5 hidden dark:block" src="/images/moon.svg" alt="Moon" />
               </Button>

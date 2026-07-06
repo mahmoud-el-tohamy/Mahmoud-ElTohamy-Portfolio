@@ -1,10 +1,11 @@
-const Button = ({ children, type, onClick, classes }) => {
+const Button = ({ children, type, onClick, classes, ...props }) => {
   if (type === "primary") {
     return (
       <button
         onClick={onClick}
         type="button"
-        className={`text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg bg-black text-white dark:bg-white dark:text-black transition-all duration-300 ease-out first:ml-0 hover:scale-105 active:scale-100 link ${classes}`}
+        className={`text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg bg-black text-white dark:bg-white dark:text-black transition-all duration-300 ease-out first:ml-0 hover:scale-105 active:scale-100 focus:outline-none focus:ring-2 focus:ring-blue-500/50 link ${classes}`}
+        {...props}
       >
         {children}
       </button>
@@ -15,7 +16,8 @@ const Button = ({ children, type, onClick, classes }) => {
     <button
       onClick={onClick}
       type="button"
-      className={`text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center gap-2 transition-all ease-out duration-300 text-black dark:text-white hover:opacity-70 active:scale-100 tablet:first:ml-0 ${classes} link`}
+      className={`text-sm tablet:text-base p-1 laptop:p-2 m-1 laptop:m-2 rounded-lg flex items-center gap-2 transition-all ease-out duration-300 text-black dark:text-white hover:opacity-70 active:scale-100 focus:outline-none focus:ring-2 focus:ring-blue-500/50 tablet:first:ml-0 ${classes} link`}
+      {...props}
     >
       {children}
     </button>

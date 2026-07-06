@@ -1,18 +1,20 @@
 import { useRef } from "react";
 import Header from "../components/Header";
-import ServiceCard from "../components/ServiceCard";
+import dynamic from "next/dynamic";
 import Socials from "../components/Socials";
-import WorkCard from "../components/WorkCard";
+
+const WorkCard = dynamic(() => import("../components/WorkCard"));
+const ServiceCard = dynamic(() => import("../components/ServiceCard"));
+const Footer = dynamic(() => import("../components/Footer"));
+const Skills = dynamic(() => import("../components/Skills"));
+const Experience = dynamic(() => import("../components/Experience"));
+const Volunteering = dynamic(() => import("../components/Volunteering"));
 
 import {
   FadeUp,
   StaggerContainer,
   StaggerItem,
 } from "../components/Animations";
-import Footer from "../components/Footer";
-import Skills from "../components/Skills";
-import Experience from "../components/Experience";
-import Volunteering from "../components/Volunteering";
 import Head from "next/head";
 import Button from "../components/Button";
 import BackToTop from "../components/BackToTop";
@@ -91,7 +93,7 @@ export default function Home() {
   return (
     <div className="relative">
       <Head>
-        <title>{data.name} | Full Stack Developer</title>
+        <title>{data.name} (محمود إسلام التهامي) | Full Stack Developer</title>
         <meta
           name="description"
           content="Portfolio of Mahmoud El-Tohamy, a Full Stack Developer from Mansoura specializing in React, Next.js, Node.js, and MongoDB."
@@ -178,6 +180,27 @@ export default function Home() {
                 "https://kafiil.com/u/mahmoud_el_tohamy",
               ],
             }),
+          }}
+        />
+        {/* Project Schema */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              "itemListElement": data.projects.map((project, index) => ({
+                "@type": "ListItem",
+                "position": index + 1,
+                "item": {
+                  "@type": "SoftwareApplication",
+                  "name": project.title,
+                  "description": project.description,
+                  "applicationCategory": "WebApplication",
+                  "operatingSystem": "Any"
+                }
+              }))
+            })
           }}
         />
       </Head>
