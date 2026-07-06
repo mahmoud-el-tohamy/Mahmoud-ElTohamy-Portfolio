@@ -23,6 +23,21 @@
       "id": "3",
       "title": "Email",
       "link": "mailto:mahmoud.eltohamyy@gmail.com"
+    },
+    {
+      "id": "4",
+      "title": "Instagram",
+      "link": "https://www.instagram.com/iammahmoudx"
+    },
+    {
+      "id": "5",
+      "title": "Facebook",
+      "link": "https://www.facebook.com/iammahmoudx"
+    },
+    {
+      "id": "6",
+      "title": "WhatsApp",
+      "link": "https://api.whatsapp.com/send?phone=201553379091"
     }
   ],
   "projects": [

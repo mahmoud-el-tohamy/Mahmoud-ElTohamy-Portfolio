@@ -151,14 +151,27 @@ export default function Home() {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              "name": "Mahmoud El-Tohamy",
-              "jobTitle": "Full Stack Developer",
-              "url": "https://mahmoud-el-tohamy-portfolio.vercel.app",
-              "sameAs": [
-                "https://github.com/mahmoud-el-tohamy",
-                "https://linkedin.com/in/mahmoud-el-tohamy"
-              ]
-            })
+              name: "Mahmoud Islam El-Tohamy",
+              url: "https://mahmoud-el-tohamy-portfolio.vercel.app/",
+              jobTitle: "Full Stack Web Developer",
+              alumniOf: [
+                "Information Technology Institute (ITI)",
+                "NTI - National Telecommunication Institute",
+                "Matrouh University - bachelor's in computer science and artificial intelligence",
+                "YLY - Team Leader and OR Head in Youth Leading Youth",
+              ],
+              sameAs: [
+                "https://www.linkedin.com/in/mahmoud-el-tohamy/",
+                "https://www.github.com/mahmoud-el-tohamy",
+                "https://www.truelancer.com/freelancer/tluser4d962149",
+                "https://www.instagram.com/iammahmoudx",
+                "https://www.facebook.com/iammahmoudx",
+                "https://api.whatsapp.com/send?phone=201553379091",
+                "https://khamsat.com/user/iammahmoudx",
+                "https://mostaql.com/u/iammahmoudx",
+                "https://kafiil.com/u/mahmoud_el_tohamy",
+              ],
+            }),
           }}
         />
       </Head>
