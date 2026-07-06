@@ -20,7 +20,7 @@ const WorkCard = ({ img, name, description, techStack, githubUrl, previewUrl }) 
   };
 
   return (
-    <div
+    <article
       className="overflow-hidden rounded-lg p-2 laptop:p-4 first:ml-0"
     >
       <div
@@ -65,7 +65,7 @@ const WorkCard = ({ img, name, description, techStack, githubUrl, previewUrl }) 
           <Button type="primary" onClick={() => window.open(previewUrl, "_blank")}>Live Preview</Button>
         )}
       </div>
-    </div>
+    </article>
   );
 };
 

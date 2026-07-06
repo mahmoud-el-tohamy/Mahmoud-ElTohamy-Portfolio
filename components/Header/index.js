@@ -103,7 +103,7 @@ const Header = ({
                       scroll: true,
                     });
                   }}
-                  className="p-2 flex items-center gap-1.5 rounded-lg text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-colors font-bold text-xs"
+                  className="relative before:absolute before:content-[''] before:w-full before:h-full before:min-w-[48px] before:min-h-[48px] before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 p-2 flex items-center gap-1.5 rounded-lg text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-colors font-bold text-xs"
                 >
                   <Globe className="w-4 h-4" />
                   <span className="leading-[0]">{router.locale === "en" ? "AR" : "EN"}</span>
@@ -377,7 +377,7 @@ const Header = ({
                   scroll: true,
                 });
               }}
-              className="p-2 ms-2 flex items-center gap-1.5 rounded-lg text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-colors font-bold text-sm"
+              className="relative before:absolute before:content-[''] before:w-full before:h-full before:min-w-[48px] before:min-h-[48px] before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 p-2 ms-2 flex items-center gap-1.5 rounded-lg text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-colors font-bold text-sm"
             >
               <Globe className="w-4 h-4" />
               <span className="leading-[0]">

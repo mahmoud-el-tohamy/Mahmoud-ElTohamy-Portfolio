@@ -7,6 +7,37 @@
   "showBlog": false,
   "darkMode": true,
   "showResume": false,
+  "seo": {
+    "title": "محمود التهامي | مطور ويب شامل",
+    "description": "معرض أعمال محمود التهامي، مطور ويب شامل (Full Stack) من المنصورة، متخصص في تقنيات React، Next.js، Node.js، و MongoDB.",
+    "keywords": "محمود التهامي, مطور ويب, مبرمج مصري, تطوير مواقع, واجهات أمامية, هندسة برمجيات, React, Next.js, Node.js, MongoDB, RTL CSS, تحسين محركات البحث",
+    "ogImage": "https://mahmoud-el-tohamy-portfolio.vercel.app/images/og-image-ar.jpg",
+    "ogLocale": "ar_EG"
+  },
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "محمود الإسلام التهامي",
+    "url": "https://mahmoud-el-tohamy-portfolio.vercel.app/ar",
+    "jobTitle": "مطور ويب شامل",
+    "alumniOf": [
+      "معهد تكنولوجيا المعلومات (ITI)",
+      "المعهد القومي للاتصالات (NTI)",
+      "جامعة مطروح - بكالوريوس الحاسبات والذكاء الاصطناعي",
+      "شباب يدير شباب (YLY) - قائد فريق ومسؤول عمليات"
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/mahmoud-el-tohamy/",
+      "https://www.github.com/mahmoud-el-tohamy",
+      "https://www.truelancer.com/freelancer/tluser4d962149",
+      "https://www.instagram.com/iammahmoudx",
+      "https://www.facebook.com/iammahmoudx",
+      "https://api.whatsapp.com/send?phone=201553379091",
+      "https://khamsat.com/user/iammahmoudx",
+      "https://mostaql.com/u/iammahmoudx",
+      "https://kafiil.com/u/mahmoud_el_tohamy"
+    ]
+  },
   "socials": [
     {
       "id": "1",

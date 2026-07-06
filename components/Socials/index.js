@@ -34,7 +34,7 @@ const Socials = ({ data, className }) => {
             target={isEmail ? "_self" : "_blank"}
             rel={isEmail ? undefined : "me noopener noreferrer"}
             aria-label={`Visit my ${social.title} profile`}
-            className="m-0 flex items-center justify-center gap-2 transition-all ease-out duration-300 text-black dark:text-white hover:opacity-70 active:scale-100 tablet:first:ml-0 w-9 h-9 tablet:w-auto tablet:h-auto tablet:px-3 tablet:py-1.5 bg-gray-100 dark:bg-white/10 rounded-full tablet:rounded-xl hover:bg-gray-200 dark:hover:bg-white/20 border border-transparent dark:border-white/5 link cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+            className="relative before:absolute before:content-[''] before:w-12 before:h-12 before:top-1/2 before:left-1/2 before:-translate-x-1/2 before:-translate-y-1/2 m-0 flex items-center justify-center gap-2 transition-all ease-out duration-300 text-black dark:text-white hover:opacity-70 active:scale-100 tablet:first:ml-0 w-9 h-9 tablet:w-auto tablet:h-auto tablet:px-3 tablet:py-1.5 bg-gray-100 dark:bg-white/10 rounded-full tablet:rounded-xl hover:bg-gray-200 dark:hover:bg-white/20 border border-transparent dark:border-white/5 link cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500/50"
           >
             {getIcon(social.title)}
             <span className="hidden tablet:block text-sm font-medium">{social.title}</span>

@@ -8,6 +8,37 @@
   "showBlog": false,
   "darkMode": true,
   "showResume": false,
+  "seo": {
+    "title": "Mahmoud El-Tohamy | Full Stack Developer",
+    "description": "Portfolio of Mahmoud El-Tohamy, a Full Stack Developer from Mansoura specializing in React, Next.js, Node.js, and MongoDB.",
+    "keywords": "Mahmoud El-Tohamy, Full Stack Developer, React, Next.js, Node.js, MongoDB, Mansoura, Web Development, Portfolio, Front-End Optimization, Next.js Performance",
+    "ogImage": "https://mahmoud-el-tohamy-portfolio.vercel.app/images/og-image.jpg",
+    "ogLocale": "en_US"
+  },
+  "structuredData": {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mahmoud Islam El-Tohamy",
+    "url": "https://mahmoud-el-tohamy-portfolio.vercel.app/",
+    "jobTitle": "Full Stack Web Developer",
+    "alumniOf": [
+      "Information Technology Institute (ITI)",
+      "NTI - National Telecommunication Institute",
+      "Matrouh University - bachelor's in computer science and artificial intelligence",
+      "YLY - Team Leader and OR Head in Youth Leading Youth"
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/mahmoud-el-tohamy/",
+      "https://www.github.com/mahmoud-el-tohamy",
+      "https://www.truelancer.com/freelancer/tluser4d962149",
+      "https://www.instagram.com/iammahmoudx",
+      "https://www.facebook.com/iammahmoudx",
+      "https://api.whatsapp.com/send?phone=201553379091",
+      "https://khamsat.com/user/iammahmoudx",
+      "https://mostaql.com/u/iammahmoudx",
+      "https://kafiil.com/u/mahmoud_el_tohamy"
+    ]
+  },
   "socials": [
     {
       "id": "1",

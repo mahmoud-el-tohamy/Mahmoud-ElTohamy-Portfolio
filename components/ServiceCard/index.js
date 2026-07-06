@@ -10,7 +10,7 @@ const iconMap = {
 
 const ServiceCard = ({ name, description, icon }) => {
   return (
-    <div
+    <article
       className={`w-full p-4 tablet:p-6 rounded-2xl transition-all ease-out duration-500 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 hover:shadow-[0_0_25px_rgba(0,112,243,0.2)] hover:border-blue-500/50 hover:-translate-y-1 group`}
     >
       {icon && iconMap[icon]}
@@ -22,7 +22,7 @@ const ServiceCard = ({ name, description, icon }) => {
           ? description
           : "Lorem Ipsum is simply dummy text."}
       </p>
-    </div>
+    </article>
   );
 };
 

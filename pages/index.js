@@ -107,96 +107,40 @@ export default function Home({ data, locale }) {
   return (
     <div className="relative">
       <Head>
-        <title>{locale === 'ar' ? "محمود إسلام التهامي | مطور ويب شامل" : `${data.name} | Full Stack Developer`}</title>
+        <title>{data.seo.title}</title>
         <link rel="alternate" href="https://mahmoud-el-tohamy-portfolio.vercel.app/" hrefLang="x-default" />
         <link rel="alternate" href="https://mahmoud-el-tohamy-portfolio.vercel.app/" hrefLang="en" />
         <link rel="alternate" href="https://mahmoud-el-tohamy-portfolio.vercel.app/ar" hrefLang="ar" />
-        <meta
-          name="description"
-          content="Portfolio of Mahmoud El-Tohamy, a Full Stack Developer from Mansoura specializing in React, Next.js, Node.js, and MongoDB."
-        />
-        <meta
-          name="keywords"
-          content="Mahmoud El-Tohamy, Full Stack Developer, React, Next.js, Node.js, MongoDB, Mansoura, Web Development, Portfolio, محمود التهامي, iti, معهد تكنولوجيا المعلومات، تطوير البرمجيات, مبرمج مصري، مطور واجهات أمامية، مصمم واجهات أمامية، مطور تطبيقات ويب، مصمم واجهات، مصمم تجربة المستخدم، مهندس برمجيات، واجهة أمامية، خلفية، تطوير ويب، تطوير برمجيات"
-        />
+        <meta name="description" content={data.seo.description} />
+        <meta name="keywords" content={data.seo.keywords} />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://mahmoud-el-tohamy-portfolio.vercel.app/" />
-        <meta
-          name="google-site-verification"
-          content="zCMPOooCyCHBd7z7Tv2z0jCmNwzIvjK-mMcIpA3xEh8"
-        />
+        <link rel="canonical" href={`https://mahmoud-el-tohamy-portfolio.vercel.app${locale === 'ar' ? '/ar' : ''}`} />
+        <meta name="google-site-verification" content="zCMPOooCyCHBd7z7Tv2z0jCmNwzIvjK-mMcIpA3xEh8" />
         <link rel="icon" type="image/png" href="/favicon.ico" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Mahmoud El-Tohamy Portfolio" />
-        <meta property="og:locale" content="en_US" />
-        <meta
-          property="og:url"
-          content="https://mahmoud-el-tohamy-portfolio.vercel.app/"
-        />
-        <meta
-          property="og:title"
-          content={`${data.name} | Full Stack Developer`}
-        />
-        <meta
-          property="og:description"
-          content="Portfolio of Mahmoud El-Tohamy, a Full Stack Developer from Mansoura specializing in React, Next.js, Node.js, and MongoDB."
-        />
-        <meta
-          property="og:image"
-          content="https://mahmoud-el-tohamy-portfolio.vercel.app/images/og-image.jpg"
-        />
+        <meta property="og:locale" content={data.seo.ogLocale} />
+        <meta property="og:url" content={`https://mahmoud-el-tohamy-portfolio.vercel.app${locale === 'ar' ? '/ar' : ''}`} />
+        <meta property="og:title" content={data.seo.title} />
+        <meta property="og:description" content={data.seo.description} />
+        <meta property="og:image" content={data.seo.ogImage} />
 
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:site" content="@iammahmoudx" />
         <meta property="twitter:creator" content="@iammahmoudx" />
-        <meta
-          property="twitter:url"
-          content="https://mahmoud-el-tohamy-portfolio.vercel.app/"
-        />
-        <meta
-          property="twitter:title"
-          content={`${data.name} | Full Stack Developer`}
-        />
-        <meta
-          property="twitter:description"
-          content="Portfolio of Mahmoud El-Tohamy, a Full Stack Developer from Mansoura specializing in React, Next.js, Node.js, and MongoDB."
-        />
-        <meta
-          property="twitter:image"
-          content="https://mahmoud-el-tohamy-portfolio.vercel.app/images/og-image.jpg"
-        />
+        <meta property="twitter:url" content={`https://mahmoud-el-tohamy-portfolio.vercel.app${locale === 'ar' ? '/ar' : ''}`} />
+        <meta property="twitter:title" content={data.seo.title} />
+        <meta property="twitter:description" content={data.seo.description} />
+        <meta property="twitter:image" content={data.seo.ogImage} />
 
         {/* Schema Markup */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Mahmoud Islam El-Tohamy",
-              url: "https://mahmoud-el-tohamy-portfolio.vercel.app/",
-              jobTitle: "Full Stack Web Developer",
-              alumniOf: [
-                "Information Technology Institute (ITI)",
-                "NTI - National Telecommunication Institute",
-                "Matrouh University - bachelor's in computer science and artificial intelligence",
-                "YLY - Team Leader and OR Head in Youth Leading Youth",
-              ],
-              sameAs: [
-                "https://www.linkedin.com/in/mahmoud-el-tohamy/",
-                "https://www.github.com/mahmoud-el-tohamy",
-                "https://www.truelancer.com/freelancer/tluser4d962149",
-                "https://www.instagram.com/iammahmoudx",
-                "https://www.facebook.com/iammahmoudx",
-                "https://api.whatsapp.com/send?phone=201553379091",
-                "https://khamsat.com/user/iammahmoudx",
-                "https://mostaql.com/u/iammahmoudx",
-                "https://kafiil.com/u/mahmoud_el_tohamy",
-              ],
-            }),
+            __html: JSON.stringify(data.structuredData),
           }}
         />
         {/* Project Schema */}
